@@ -50,13 +50,21 @@ body {
 
 .logo-panel h1 {
   margin: 0;
-  font-family: "Bungee", "Space Grotesk", sans-serif;
-  font-size: clamp(2.8rem, 9vw, 5rem);
+  font-family: "Sora", "Space Grotesk", sans-serif;
+  font-size: clamp(2.4rem, 8vw, 4.4rem);
+  font-weight: 800;
   line-height: 1;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.01em;
   color: #ffffff;
   text-shadow: 0 0 18px rgba(122, 125, 255, 0.45);
   text-align: left;
+}
+
+.brand-slogan {
+  margin-top: 10px;
+  font-size: clamp(0.95rem, 2vw, 1.2rem);
+  color: #aee7ff;
+  letter-spacing: 0.02em;
 }
 
 .logo-image {
@@ -77,6 +85,10 @@ p {
   margin: 0;
   line-height: 1.6;
   color: var(--muted);
+}
+
+.story-copy p + p {
+  margin-top: 14px;
 }
 
 .apps-section {
@@ -239,5 +251,10 @@ p {
 
   .logo-panel h1 {
     font-size: clamp(2.1rem, 10vw, 3rem);
+  }
+
+  .brand-slogan {
+    margin-top: 8px;
+    font-size: 0.92rem;
   }
 }
