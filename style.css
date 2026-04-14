@@ -18,11 +18,7 @@ body {
   margin: 0;
   color: var(--text);
   font-family: "Space Grotesk", "Avenir Next", "Segoe UI", sans-serif;
-  background:
-    radial-gradient(circle at 10% 0%, #322060 0%, transparent 40%),
-    radial-gradient(circle at 90% 0%, #0d4f80 0%, transparent 34%),
-    radial-gradient(circle at 50% 100%, #6e2e53 0%, transparent 38%),
-    var(--bg-1);
+  background: #000000;
 }
 
 .page {
@@ -32,7 +28,7 @@ body {
 }
 
 .panel {
-  background: #000000;
+  background: linear-gradient(145deg, #11182b, #0a1020);
   border: 1px solid var(--line);
   border-radius: 18px;
   padding: 28px;
@@ -50,7 +46,7 @@ body {
 
 .logo-panel h1 {
   margin: 0;
-  font-family: "Sora", "Space Grotesk", sans-serif;
+  font-family: "Syne", "Space Grotesk", sans-serif;
   font-size: clamp(2.4rem, 8vw, 4.4rem);
   font-weight: 800;
   line-height: 1;
@@ -63,8 +59,9 @@ body {
 .brand-slogan {
   margin-top: 10px;
   font-size: clamp(0.95rem, 2vw, 1.2rem);
-  color: #aee7ff;
+  color: #ff9a75;
   letter-spacing: 0.02em;
+  font-weight: 700;
 }
 
 .logo-image {
@@ -91,6 +88,17 @@ p {
   margin-top: 14px;
 }
 
+.story-layout {
+  display: grid;
+  gap: 14px;
+}
+
+.story-lead {
+  font-size: clamp(1.05rem, 2vw, 1.22rem);
+  color: #e8efff;
+  line-height: 1.7;
+}
+
 .apps-section {
   margin-bottom: 18px;
 }
@@ -109,16 +117,17 @@ p {
   width: 100%;
   border: 1px solid var(--line);
   border-radius: 14px;
-  background: #000000;
+  background: linear-gradient(150deg, #141320, #0b0d16);
   padding: 16px;
+  font-family: "Manrope", "Space Grotesk", sans-serif;
 }
 
 .coupez-card {
-  background: #000000;
+  background: linear-gradient(145deg, #10213c, #1e1443);
 }
 
 .masterschecker-card {
-  background: #000000;
+  background: linear-gradient(145deg, #2a1538, #3b1c1d);
 }
 
 .app-card h3 {
@@ -207,8 +216,16 @@ p {
 
 .footer-panel nav {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px 16px;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 10px 14px;
+  white-space: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.footer-panel nav::-webkit-scrollbar {
+  display: none;
 }
 
 .footer-panel a {
@@ -220,6 +237,18 @@ p {
 .footer-panel a:hover {
   color: #8ee2ff;
   border-bottom-color: #8ee2ff;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.social-link svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
 }
 
 @media (min-width: 860px) {
@@ -237,6 +266,11 @@ p {
 
   .coupez-card .app-split {
     grid-template-columns: minmax(240px, 360px) minmax(0, 1fr);
+  }
+
+  .story-layout {
+    grid-template-columns: minmax(240px, 320px) minmax(0, 1fr);
+    gap: 24px;
   }
 }
 
