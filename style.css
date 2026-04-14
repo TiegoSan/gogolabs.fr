@@ -116,6 +116,16 @@ p {
   font-size: 0.95rem;
 }
 
+.app-split {
+  display: grid;
+  gap: 18px;
+  align-items: start;
+}
+
+.app-copy h3 {
+  margin: 0 0 10px;
+}
+
 .app-points {
   margin: 10px 0 0 18px;
   padding: 0;
@@ -140,6 +150,14 @@ p {
   max-height: 420px;
   object-fit: cover;
   object-position: top center;
+}
+
+.app-visual-masterschecker {
+  width: min(100%, 360px);
+  max-height: none;
+  object-fit: contain;
+  object-position: center top;
+  margin: 0;
 }
 
 .cta-wrap {
@@ -189,6 +207,10 @@ p {
 
   .panel {
     padding: 34px;
+  }
+
+  .masterschecker-card .app-split {
+    grid-template-columns: minmax(240px, 360px) minmax(0, 1fr);
   }
 }
 
