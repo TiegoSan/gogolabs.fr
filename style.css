@@ -160,6 +160,14 @@ p {
   margin: 0;
 }
 
+.app-visual-coupez {
+  width: min(100%, 360px);
+  max-height: none;
+  object-fit: contain;
+  object-position: center top;
+  margin: 0;
+}
+
 .cta-wrap {
   display: flex;
   justify-content: center;
@@ -210,6 +218,10 @@ p {
   }
 
   .masterschecker-card .app-split {
+    grid-template-columns: minmax(240px, 360px) minmax(0, 1fr);
+  }
+
+  .coupez-card .app-split {
     grid-template-columns: minmax(240px, 360px) minmax(0, 1fr);
   }
 }
