@@ -43,7 +43,7 @@ body {
 .brand-row {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: clamp(14px, 3vw, 28px);
   width: 100%;
 }
@@ -56,7 +56,7 @@ body {
   letter-spacing: 0.03em;
   color: #ffffff;
   text-shadow: 0 0 18px rgba(122, 125, 255, 0.45);
-  text-align: center;
+  text-align: left;
 }
 
 .logo-image {
