@@ -45,31 +45,27 @@ body {
 .brand-row {
   display: flex;
   align-items: center;
-  gap: 20px;
+  justify-content: center;
+  gap: clamp(14px, 3vw, 28px);
+  width: 100%;
 }
 
 .logo-panel h1 {
   margin: 0;
-  font-family: "Lobster", "Space Grotesk", cursive;
-  font-size: clamp(2.4rem, 8vw, 4rem);
+  font-family: "Bungee", "Space Grotesk", sans-serif;
+  font-size: clamp(2.8rem, 9vw, 5rem);
   line-height: 1;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
   color: #ffffff;
   text-shadow: 0 0 18px rgba(122, 125, 255, 0.45);
+  text-align: center;
 }
 
 .logo-image {
   display: block;
-  width: clamp(116px, 20vw, 190px);
+  width: clamp(132px, 22vw, 220px);
   height: auto;
   margin: 0;
-}
-
-.eyebrow {
-  margin: 0 0 10px;
-  font-size: 0.95rem;
-  color: var(--muted);
-  text-transform: lowercase;
 }
 
 h2 {
@@ -171,10 +167,14 @@ p {
 
 @media (max-width: 640px) {
   .brand-row {
-    gap: 14px;
+    gap: 12px;
   }
 
   .logo-image {
-    width: 112px;
+    width: 116px;
+  }
+
+  .logo-panel h1 {
+    font-size: clamp(2.1rem, 10vw, 3rem);
   }
 }
