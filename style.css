@@ -46,9 +46,9 @@ body {
 
 .logo-image {
   display: block;
-  width: clamp(120px, 20vw, 180px);
+  width: clamp(72px, 12vw, 108px);
   height: auto;
-  margin: 0 0 16px;
+  margin: 0 0 14px;
 }
 
 .eyebrow {
@@ -88,6 +88,15 @@ p {
 
 .app-card p {
   font-size: 0.95rem;
+}
+
+.app-visual {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  margin: 4px 0 12px;
 }
 
 .cta-wrap {
@@ -139,6 +148,6 @@ p {
   }
 
   #apps .apps-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
