@@ -1,12 +1,13 @@
 :root {
-  --bg-1: #080a10;
-  --bg-2: #0f1320;
-  --text: #e9edf7;
-  --muted: #a9b3cc;
-  --line: #323e59;
-  --panel: rgba(14, 18, 30, 0.78);
-  --accent: #7ab2ff;
-  --accent-strong: #4f95ff;
+  --bg-1: #090e1b;
+  --bg-2: #121b2f;
+  --text: #f5f8ff;
+  --muted: #c2cbe1;
+  --line: #39507c;
+  --panel: rgba(19, 28, 48, 0.74);
+  --accent: #61d0ff;
+  --accent-strong: #7a7dff;
+  --accent-warm: #ff8f70;
 }
 
 * {
@@ -18,8 +19,9 @@ body {
   color: var(--text);
   font-family: "Space Grotesk", "Avenir Next", "Segoe UI", sans-serif;
   background:
-    radial-gradient(circle at 20% 0%, #1a2440 0%, transparent 35%),
-    radial-gradient(circle at 80% 100%, #192032 0%, transparent 30%),
+    radial-gradient(circle at 10% 0%, #322060 0%, transparent 40%),
+    radial-gradient(circle at 90% 0%, #0d4f80 0%, transparent 34%),
+    radial-gradient(circle at 50% 100%, #6e2e53 0%, transparent 38%),
     var(--bg-1);
 }
 
@@ -30,7 +32,9 @@ body {
 }
 
 .panel {
-  background: var(--panel);
+  background:
+    linear-gradient(150deg, rgba(122, 125, 255, 0.12), rgba(97, 208, 255, 0.06) 28%, rgba(0, 0, 0, 0)),
+    var(--panel);
   border: 1px solid var(--line);
   border-radius: 18px;
   padding: 28px;
@@ -38,22 +42,32 @@ body {
   backdrop-filter: blur(6px);
 }
 
+.brand-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .logo-panel h1 {
   margin: 0;
-  font-size: clamp(2rem, 6vw, 3.2rem);
+  font-family: "Lobster", "Space Grotesk", cursive;
+  font-size: clamp(2.4rem, 8vw, 4rem);
   line-height: 1;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  text-shadow: 0 0 18px rgba(122, 125, 255, 0.45);
 }
 
 .logo-image {
   display: block;
-  width: clamp(72px, 12vw, 108px);
+  width: clamp(116px, 20vw, 190px);
   height: auto;
-  margin: 0 0 14px;
+  margin: 0;
 }
 
 .eyebrow {
-  margin: 0 0 12px;
-  font-size: 0.92rem;
+  margin: 0 0 10px;
+  font-size: 0.95rem;
   color: var(--muted);
   text-transform: lowercase;
 }
@@ -61,6 +75,8 @@ body {
 h2 {
   margin: 0 0 12px;
   font-size: clamp(1.5rem, 4vw, 2rem);
+  color: #d9e6ff;
+  text-shadow: 0 0 16px rgba(97, 208, 255, 0.2);
 }
 
 p {
@@ -77,7 +93,7 @@ p {
 .app-card {
   border: 1px solid var(--line);
   border-radius: 14px;
-  background: rgba(13, 18, 32, 0.72);
+  background: linear-gradient(180deg, rgba(13, 19, 36, 0.88), rgba(15, 23, 43, 0.78));
   padding: 16px;
 }
 
@@ -109,16 +125,17 @@ p {
   display: inline-block;
   border: 1px solid var(--line);
   border-radius: 14px;
-  background: linear-gradient(180deg, #1d3762, #13233f);
-  color: #edf3ff;
+  background: linear-gradient(135deg, #5f6bff, #4ab3ff 52%, #ff8f70);
+  color: #ffffff;
   padding: 14px 22px;
   text-decoration: none;
   font-weight: 700;
+  box-shadow: 0 8px 24px rgba(74, 179, 255, 0.32);
 }
 
 .appstore-link:hover {
-  border-color: var(--accent);
-  background: linear-gradient(180deg, #24457a, #1b3157);
+  border-color: #a1dcff;
+  background: linear-gradient(135deg, #7380ff, #61c0ff 54%, #ff9d82);
 }
 
 .footer-panel nav {
@@ -134,8 +151,8 @@ p {
 }
 
 .footer-panel a:hover {
-  color: var(--accent);
-  border-bottom-color: var(--accent-strong);
+  color: #8ee2ff;
+  border-bottom-color: #8ee2ff;
 }
 
 @media (min-width: 860px) {
@@ -149,5 +166,15 @@ p {
 
   #apps .apps-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .brand-row {
+    gap: 14px;
+  }
+
+  .logo-image {
+    width: 112px;
   }
 }
