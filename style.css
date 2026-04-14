@@ -32,9 +32,7 @@ body {
 }
 
 .panel {
-  background:
-    linear-gradient(150deg, rgba(122, 125, 255, 0.12), rgba(97, 208, 255, 0.06) 28%, rgba(0, 0, 0, 0)),
-    var(--panel);
+  background: #000000;
   border: 1px solid var(--line);
   border-radius: 18px;
   padding: 28px;
