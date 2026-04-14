@@ -102,6 +102,17 @@ p {
   font-size: 0.95rem;
 }
 
+.app-points {
+  margin: 10px 0 0 18px;
+  padding: 0;
+  color: var(--muted);
+}
+
+.app-points li {
+  margin: 6px 0 0;
+  line-height: 1.5;
+}
+
 .app-visual {
   width: 100%;
   height: auto;
@@ -109,6 +120,12 @@ p {
   border-radius: 10px;
   border: 1px solid var(--line);
   margin: 4px 0 12px;
+}
+
+.app-visual-tall {
+  max-height: 420px;
+  object-fit: cover;
+  object-position: top center;
 }
 
 .cta-wrap {

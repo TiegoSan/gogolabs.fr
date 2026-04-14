@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Support | GogoLabs</title>
-    <meta name="description" content="Support page for GogoLabs apps, including Coupez." />
+    <meta name="description" content="Support by app for Coupez and MastersChecker." />
     <link rel="icon" type="image/png" href="/assets/favicon.png" />
     <link rel="apple-touch-icon" href="/assets/favicon.png" />
     <link rel="stylesheet" href="style.css" />
     <style>
       .support {
-        max-width: 900px;
+        max-width: 940px;
         margin: 0 auto;
       }
 
@@ -39,6 +39,19 @@
         color: #8ee2ff;
       }
 
+      .support-grid {
+        display: grid;
+        gap: 16px;
+        margin-top: 18px;
+      }
+
+      .support-card {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 16px;
+        background: linear-gradient(180deg, rgba(13, 19, 36, 0.88), rgba(15, 23, 43, 0.78));
+      }
+
       .support .action {
         display: inline-block;
         margin-top: 16px;
@@ -47,6 +60,12 @@
         border: 1px solid var(--line);
         text-decoration: none;
       }
+
+      @media (min-width: 900px) {
+        .support-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
     </style>
   </head>
   <body>
@@ -54,33 +73,49 @@
       <section class="panel">
         <h1>Support</h1>
         <p>
-          Need help with a GogoLabs app? We are available for bug reports, account questions,
-          feature requests, and technical support.
+          Choose your app below and send us the right details for a faster, more useful reply.
+          General contact: <a href="mailto:contact@gogolabs.fr">contact@gogolabs.fr</a>.
         </p>
 
-        <h2>Contact</h2>
-        <p>
-          Email us at <a href="mailto:contact@gogolabs.fr">contact@gogolabs.fr</a>.
-          Please include your app name, device model, iOS/macOS version, and a short issue description.
-        </p>
+        <div class="support-grid">
+          <article class="support-card">
+            <h2>Coupez Support</h2>
+            <p>
+              Coupez handles local cut detection, two-video comparison, and AAF/conform workflows
+              for post-production pipelines.
+            </p>
+            <ul>
+              <li>Attach a screenshot of the cut list or compare view.</li>
+              <li>Share source/target media format and start timecode settings.</li>
+              <li>If export fails, include the exact AAF/conform step and message.</li>
+            </ul>
+            <p>
+              Legacy documentation:
+              <a href="https://hallowed-rondeletia-8b1.notion.site/Coupez-Support-33279ab45e36807e9d20d01fc654c5c9?source=copy_link" target="_blank" rel="noopener noreferrer">
+                Coupez Support (Notion)
+              </a>
+            </p>
+          </article>
 
-        <h2>Coupez Support</h2>
-        <ul>
-          <li>Describe the exact step where the issue appears.</li>
-          <li>Attach a screenshot or screen recording when possible.</li>
-          <li>Include the file format you are using (for example WAV, AIFF, MP3).</li>
-        </ul>
+          <article class="support-card">
+            <h2>MastersChecker Support</h2>
+            <p>
+              MastersChecker covers loudness compliance, dialogue analysis, PDF reports,
+              and video finishing queue workflows.
+            </p>
+            <ul>
+              <li>Tell us which preset/spec you selected (for example Netflix or Disney Plus 5.1).</li>
+              <li>Include loudness values shown by the app (Integrated, LRA, True Peak).</li>
+              <li>For export issues, include selected codec and output settings.</li>
+            </ul>
+            <p>
+              For critical delivery deadlines, mention your target platform and due date in the email subject.
+            </p>
+          </article>
+        </div>
 
         <h2>Response Time</h2>
         <p>We usually reply within 2 business days.</p>
-
-        <h2>Additional Documentation</h2>
-        <p>
-          If you prefer the previous Notion support page, it is still available here:
-          <a href="https://hallowed-rondeletia-8b1.notion.site/Coupez-Support-33279ab45e36807e9d20d01fc654c5c9?source=copy_link" target="_blank" rel="noopener noreferrer">
-            Coupez Support (Notion)
-          </a>.
-        </p>
 
         <a class="action" href="index.html">Back to home</a>
       </section>
