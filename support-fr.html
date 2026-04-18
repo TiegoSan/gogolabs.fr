@@ -7,122 +7,102 @@
     <meta name="description" content="Support en français pour Coupez et MastersChecker." />
     <link rel="icon" type="image/png" href="/assets/favicon.png" />
     <link rel="apple-touch-icon" href="/assets/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
-    <style>
-      .support {
-        max-width: 940px;
-        margin: 0 auto;
-      }
-
-      .support h1 {
-        margin: 0 0 14px;
-        font-size: clamp(2rem, 5vw, 2.8rem);
-      }
-
-      .support h2 {
-        margin-top: 24px;
-      }
-
-      .support p,
-      .support li {
-        margin-top: 8px;
-        color: var(--muted);
-        line-height: 1.65;
-      }
-
-      .support ul {
-        margin: 8px 0 0 20px;
-        padding: 0;
-      }
-
-      .support a {
-        color: #8ee2ff;
-      }
-
-      .support-grid {
-        display: grid;
-        gap: 16px;
-        margin-top: 18px;
-      }
-
-      .support-card {
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        padding: 16px;
-        background: #000000;
-      }
-
-      .lang-switch {
-        margin-top: 10px;
-      }
-
-      .support .action {
-        display: inline-block;
-        margin-top: 16px;
-        padding: 10px 14px;
-        border-radius: 10px;
-        border: 1px solid var(--line);
-        text-decoration: none;
-      }
-
-      @media (min-width: 900px) {
-        .support-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-      }
-    </style>
   </head>
   <body>
-    <main class="page support">
-      <section class="panel">
-        <h1>Support</h1>
-        <p class="lang-switch">Version anglaise: <a href="/support.html">Support (EN)</a></p>
-        <p>
-          Choisissez votre app ci-dessous et envoyez-nous les bonnes informations pour une réponse
-          plus rapide et plus utile. Contact général : <a href="mailto:contact@gogolabs.fr">contact@gogolabs.fr</a>.
-        </p>
+    <main class="page">
+      <header class="site-header" id="top">
+        <div class="topbar">
+          <a class="brand-lockup" href="/index.html#top" aria-label="Accueil GogoLabs">
+            <img
+              class="brand-mark"
+              src="assets/gogolabs-logo.png"
+              alt="Logo GogoLabs"
+              width="900"
+              height="900"
+            />
+            <span class="brand-name">GogoLabs</span>
+          </a>
+
+          <nav class="topnav" aria-label="Navigation principale">
+            <a href="/index.html#studio">Studio</a>
+            <a href="/index.html#principles">Principes</a>
+            <a href="/index.html#apps">Apps</a>
+            <a href="/index.html#team">Equipe</a>
+            <a href="/support-fr.html" aria-current="page">Support</a>
+          </nav>
+        </div>
+      </header>
+
+      <section class="section support-page">
+        <div class="section-heading support-heading">
+          <p class="eyebrow">Support</p>
+          <h1>Obtenez une réponse utile plus vite en envoyant les bons détails.</h1>
+          <p class="support-lead">
+            Choisissez votre app ci-dessous et incluez le bon contexte dans votre email. Contact
+            général : <a href="mailto:contact@gogolabs.fr">contact@gogolabs.fr</a>.
+          </p>
+          <p class="support-lang-switch">
+            Version anglaise :
+            <a href="/support.html" lang="en">Support (EN)</a>
+          </p>
+        </div>
 
         <div class="support-grid">
           <article class="support-card">
+            <p class="app-kicker">Pour montage et conformation</p>
             <h2>Support Coupez</h2>
             <p>
-              Coupez gère la détection locale des cuts, la comparaison de deux vidéos et les workflows
-              AAF/conform pour la post-production.
+              Coupez gère la détection locale des cuts, la comparaison de deux vidéos et les
+              workflows AAF/conform pour la post-production.
             </p>
-            <ul>
+            <ul class="app-list support-list">
               <li>Ajoutez une capture de la cut list ou de l'écran de comparaison.</li>
               <li>Indiquez les formats source/cible et les réglages de timecode.</li>
               <li>En cas d'échec d'export, précisez l'étape exacte AAF/conform et le message d'erreur.</li>
             </ul>
-            <p>
+            <p class="support-note">
               Documentation historique :
-              <a href="https://hallowed-rondeletia-8b1.notion.site/Coupez-Support-33279ab45e36807e9d20d01fc654c5c9?source=copy_link" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://hallowed-rondeletia-8b1.notion.site/Coupez-Support-33279ab45e36807e9d20d01fc654c5c9?source=copy_link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Coupez Support (Notion)
               </a>
             </p>
           </article>
 
           <article class="support-card">
+            <p class="app-kicker">Pour mixage, QC et finishing</p>
             <h2>Support MastersChecker</h2>
             <p>
               MastersChecker couvre la conformité loudness, l'analyse du dialogue, les rapports PDF
               et les workflows de finishing vidéo.
             </p>
-            <ul>
+            <ul class="app-list support-list">
               <li>Indiquez le preset/spec choisi (ex. Netflix ou Disney Plus 5.1).</li>
               <li>Ajoutez les valeurs loudness affichées (Integrated, LRA, True Peak).</li>
               <li>Pour les exports, précisez le codec et les réglages de sortie utilisés.</li>
             </ul>
-            <p>
-              Si la deadline est critique, indiquez la plateforme cible et la date de livraison dans l'objet du mail.
+            <p class="support-note">
+              Si la deadline est critique, indiquez la plateforme cible et la date de livraison dans
+              l'objet du mail.
             </p>
           </article>
         </div>
 
-        <h2>Délai de réponse</h2>
-        <p>Nous répondons en général sous 2 jours ouvrés.</p>
-
-        <a class="action" href="index.html">Retour à l'accueil</a>
+        <div class="support-meta">
+          <h2>Délai de réponse</h2>
+          <p>Nous répondons en général sous 2 jours ouvrés.</p>
+          <a class="support-back-link" href="/index.html">Retour à l'accueil</a>
+        </div>
       </section>
     </main>
   </body>

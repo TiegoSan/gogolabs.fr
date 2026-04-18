@@ -7,122 +7,102 @@
     <meta name="description" content="Support by app for Coupez and MastersChecker." />
     <link rel="icon" type="image/png" href="/assets/favicon.png" />
     <link rel="apple-touch-icon" href="/assets/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
-    <style>
-      .support {
-        max-width: 940px;
-        margin: 0 auto;
-      }
-
-      .support h1 {
-        margin: 0 0 14px;
-        font-size: clamp(2rem, 5vw, 2.8rem);
-      }
-
-      .support h2 {
-        margin-top: 24px;
-      }
-
-      .support p,
-      .support li {
-        margin-top: 8px;
-        color: var(--muted);
-        line-height: 1.65;
-      }
-
-      .support ul {
-        margin: 8px 0 0 20px;
-        padding: 0;
-      }
-
-      .support a {
-        color: #8ee2ff;
-      }
-
-      .lang-switch {
-        margin-top: 10px;
-      }
-
-      .support-grid {
-        display: grid;
-        gap: 16px;
-        margin-top: 18px;
-      }
-
-      .support-card {
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        padding: 16px;
-        background: linear-gradient(180deg, rgba(13, 19, 36, 0.88), rgba(15, 23, 43, 0.78));
-      }
-
-      .support .action {
-        display: inline-block;
-        margin-top: 16px;
-        padding: 10px 14px;
-        border-radius: 10px;
-        border: 1px solid var(--line);
-        text-decoration: none;
-      }
-
-      @media (min-width: 900px) {
-        .support-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-      }
-    </style>
   </head>
   <body>
-    <main class="page support">
-      <section class="panel">
-        <h1>Support</h1>
-        <p class="lang-switch">Version francaise: <a href="/support-fr.html">Support (FR)</a></p>
-        <p>
-          Choose your app below and send us the right details for a faster, more useful reply.
-          General contact: <a href="mailto:contact@gogolabs.fr">contact@gogolabs.fr</a>.
-        </p>
+    <main class="page">
+      <header class="site-header" id="top">
+        <div class="topbar">
+          <a class="brand-lockup" href="/index.html#top" aria-label="GogoLabs home">
+            <img
+              class="brand-mark"
+              src="assets/gogolabs-logo.png"
+              alt="GogoLabs logo"
+              width="900"
+              height="900"
+            />
+            <span class="brand-name">GogoLabs</span>
+          </a>
+
+          <nav class="topnav" aria-label="Primary">
+            <a href="/index.html#studio">Studio</a>
+            <a href="/index.html#principles">Principles</a>
+            <a href="/index.html#apps">Apps</a>
+            <a href="/index.html#team">Team</a>
+            <a href="/support.html" aria-current="page">Support</a>
+          </nav>
+        </div>
+      </header>
+
+      <section class="section support-page">
+        <div class="section-heading support-heading">
+          <p class="eyebrow">Support</p>
+          <h1>Get the fastest useful answer by sending app-specific details.</h1>
+          <p class="support-lead">
+            Choose your app below and include the right context in your email. General contact:
+            <a href="mailto:contact@gogolabs.fr">contact@gogolabs.fr</a>.
+          </p>
+          <p class="support-lang-switch">
+            Version francaise:
+            <a href="/support-fr.html" lang="fr">Support (FR)</a>
+          </p>
+        </div>
 
         <div class="support-grid">
           <article class="support-card">
+            <p class="app-kicker">For editors and conform teams</p>
             <h2>Coupez Support</h2>
             <p>
               Coupez handles local cut detection, two-video comparison, and AAF/conform workflows
               for post-production pipelines.
             </p>
-            <ul>
+            <ul class="app-list support-list">
               <li>Attach a screenshot of the cut list or compare view.</li>
               <li>Share source/target media format and start timecode settings.</li>
               <li>If export fails, include the exact AAF/conform step and message.</li>
             </ul>
-            <p>
+            <p class="support-note">
               Legacy documentation:
-              <a href="https://hallowed-rondeletia-8b1.notion.site/Coupez-Support-33279ab45e36807e9d20d01fc654c5c9?source=copy_link" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://hallowed-rondeletia-8b1.notion.site/Coupez-Support-33279ab45e36807e9d20d01fc654c5c9?source=copy_link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Coupez Support (Notion)
               </a>
             </p>
           </article>
 
           <article class="support-card">
+            <p class="app-kicker">For mixers, QC, and finishing</p>
             <h2>MastersChecker Support</h2>
             <p>
-              MastersChecker covers loudness compliance, dialogue analysis, PDF reports,
-              and video finishing queue workflows.
+              MastersChecker covers loudness compliance, dialogue analysis, PDF reports, and video
+              finishing queue workflows.
             </p>
-            <ul>
+            <ul class="app-list support-list">
               <li>Tell us which preset/spec you selected (for example Netflix or Disney Plus 5.1).</li>
               <li>Include loudness values shown by the app (Integrated, LRA, True Peak).</li>
               <li>For export issues, include selected codec and output settings.</li>
             </ul>
-            <p>
-              For critical delivery deadlines, mention your target platform and due date in the email subject.
+            <p class="support-note">
+              For critical delivery deadlines, mention your target platform and due date in the
+              email subject.
             </p>
           </article>
         </div>
 
-        <h2>Response Time</h2>
-        <p>We usually reply within 2 business days.</p>
-
-        <a class="action" href="index.html">Back to home</a>
+        <div class="support-meta">
+          <h2>Response Time</h2>
+          <p>We usually reply within 2 business days.</p>
+          <a class="support-back-link" href="/index.html">Back to home</a>
+        </div>
       </section>
     </main>
   </body>
