@@ -464,12 +464,11 @@ p {
   height: auto;
   border-radius: 28px;
   box-shadow: 0 28px 70px rgba(17, 24, 39, 0.22);
-  transform: perspective(1200px) rotateY(-8deg) rotateZ(-1.5deg);
-  transform-origin: center;
+  transform: none;
 }
 
 .app-block-reverse .app-visual img {
-  transform: perspective(1200px) rotateY(8deg) rotateZ(1.5deg);
+  transform: none;
 }
 
 .team-grid {
