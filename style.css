@@ -670,3 +670,8 @@ p {
     padding-top: 20px;
   }
 }
+
+.app-visual {
+  background: transparent;
+}
+
