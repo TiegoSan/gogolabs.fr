@@ -497,6 +497,12 @@ p {
   box-shadow: var(--shadow-soft);
 }
 
+.team-entry h3 {
+  font-size: clamp(1.32rem, 1.8vw, 1.9rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
 .site-footer {
   padding: 112px 28px 56px;
 }
