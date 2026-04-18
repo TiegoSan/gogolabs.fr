@@ -258,10 +258,9 @@ p {
 
 .intro-note {
   position: relative;
-  overflow: hidden;
   padding: 34px 30px;
   border-radius: var(--radius-xl);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(246, 248, 251, 0.78));
+  background: transparent;
   border: 1px solid rgba(18, 26, 43, 0.12);
   box-shadow: var(--shadow-soft);
   transform: translateY(24px);
@@ -269,16 +268,7 @@ p {
 }
 
 .intro-note::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 auto;
-  height: 4px;
-  background: linear-gradient(
-    90deg,
-    rgba(18, 26, 43, 0.18) 0%,
-    rgba(18, 26, 43, 0.06) 56%,
-    transparent 100%
-  );
+  content: none;
 }
 
 .note-brand {
