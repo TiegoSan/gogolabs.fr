@@ -385,13 +385,17 @@ p {
   gap: 56px;
   align-items: center;
   margin-top: 46px;
-  padding: 28px 0 0;
+  padding: 34px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(246, 248, 251, 0.74));
+  border: 1px solid rgba(18, 26, 43, 0.08);
+  box-shadow: var(--shadow-soft);
 }
 
 .app-block + .app-block {
-  margin-top: 56px;
-  border-top: 1px solid rgba(18, 26, 43, 0.08);
-  padding-top: 56px;
+  margin-top: 32px;
+  border-top: 0;
+  padding-top: 34px;
 }
 
 .app-block-reverse {
@@ -649,6 +653,11 @@ p {
     text-align: center;
   }
 
+  .app-block {
+    padding: 20px;
+    gap: 24px;
+  }
+
   .app-visual,
   .principle,
   .team-entry,
@@ -657,7 +666,7 @@ p {
   }
 
   .app-block + .app-block {
-    margin-top: 42px;
-    padding-top: 42px;
+    margin-top: 24px;
+    padding-top: 20px;
   }
 }
