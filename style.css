@@ -372,39 +372,48 @@ p {
 
 .apps {
   padding-top: 112px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.apps .section-heading {
+  grid-column: 1 / -1;
 }
 
 .app-block {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
-  gap: 40px;
-  align-items: center;
-  margin-top: 46px;
-  margin-inline: auto;
-  max-width: 980px;
-  padding: 24px;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "top"
+    "visual"
+    "bottom";
+  gap: 14px;
+  align-items: start;
+  margin-top: 0;
+  margin-inline: 0;
+  width: 100%;
+  max-width: none;
+  padding: 18px;
   border-radius: var(--radius-lg);
   background: #f4f7ff;
   border: 1px solid #000000;
   box-shadow: none;
+  justify-self: stretch;
+}
+
+.app-copy-top {
+  grid-area: top;
+}
+
+.app-copy-bottom {
+  grid-area: bottom;
 }
 
 .app-block + .app-block {
-  margin-top: 32px;
-  border-top: 0;
-  padding-top: 24px;
-}
-
-.app-block-reverse {
-  grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1fr);
-}
-
-.app-block-reverse .app-copy {
-  order: 2;
-}
-
-.app-block-reverse .app-visual {
-  order: 1;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .app-kicker {
@@ -454,26 +463,31 @@ p {
 }
 
 .app-visual {
+  grid-area: visual;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100%;
+  min-height: 320px;
   padding: 0;
 }
 
 .app-visual img {
   position: relative;
   z-index: 1;
-  width: min(100%, 360px);
+  width: min(100%, 460px);
+  max-height: 360px;
+  object-fit: contain;
   height: auto;
   border-radius: 28px;
   box-shadow: none;
   transform: none;
 }
 
-.app-block-reverse .app-visual img {
-  transform: none;
+@media (max-width: 959px) {
+  .apps {
+    grid-template-columns: 1fr;
+  }
 }
 
 .team-grid {
@@ -541,7 +555,6 @@ p {
 @media (max-width: 959px) {
   .intro,
   .app-block,
-  .app-block-reverse,
   .team-grid,
   .footer-grid {
     grid-template-columns: 1fr;
@@ -552,19 +565,15 @@ p {
     width: 100%;
   }
 
-  .app-block-reverse .app-copy,
-  .app-block-reverse .app-visual {
-    order: initial;
-  }
-
   .intro::before {
     right: -40px;
     width: 280px;
     height: 280px;
   }
 
-  .app-visual img,
-  .app-block-reverse .app-visual img {
+  .app-visual img {
+    width: min(100%, 520px);
+    max-height: 400px;
     transform: none;
   }
 }
@@ -653,6 +662,7 @@ p {
   .app-block {
     padding: 16px;
     gap: 18px;
+    max-width: 100%;
   }
 
   .app-visual,
@@ -663,11 +673,102 @@ p {
   }
 
   .app-block + .app-block {
-    margin-top: 24px;
-    padding-top: 16px;
+    margin-top: 0;
+    padding-top: 0;
   }
 }
 
 .app-visual {
   background: transparent;
+}
+
+/* Apps cards: compact layout to reduce empty space */
+.app-block {
+  grid-template-columns: minmax(180px, 240px) minmax(0, 1fr);
+  grid-template-areas:
+    "top top"
+    "visual bottom";
+  gap: 10px 14px;
+  padding: 14px;
+}
+
+.app-copy-top,
+.app-copy-bottom {
+  display: grid;
+  gap: 10px;
+}
+
+.app-copy h3 {
+  margin-top: 2px;
+}
+
+.app-summary {
+  font-size: 1.03rem;
+  line-height: 1.62;
+}
+
+.app-summary strong {
+  display: block;
+  color: var(--text);
+  font-weight: 400;
+  line-height: 1.46;
+}
+
+.app-summary em {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted-strong);
+  font-style: italic;
+  font-weight: 600;
+}
+
+.app-summary-extra {
+  margin-top: 6px;
+}
+
+.app-list {
+  margin-top: 14px;
+  gap: 10px;
+}
+
+.app-list li {
+  padding-left: 14px;
+}
+
+.app-list strong {
+  color: var(--text);
+  font-weight: 400;
+}
+
+.app-visual {
+  min-height: 0;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.app-visual img {
+  width: min(100%, 240px);
+  max-height: none;
+  border-radius: 20px;
+}
+
+@media (max-width: 959px) {
+  .app-block {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "top"
+      "visual"
+      "bottom";
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .app-visual {
+    justify-content: center;
+  }
+
+  .app-visual img {
+    width: min(100%, 420px);
+    max-height: 340px;
+  }
 }
