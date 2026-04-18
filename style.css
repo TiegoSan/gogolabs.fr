@@ -258,10 +258,13 @@ p {
 
 .intro-note {
   position: relative;
-  padding: 34px 30px;
+  justify-self: start;
+  width: min(100%, 560px);
+  margin-left: -42px;
+  padding: 44px 40px;
   border-radius: var(--radius-xl);
-  background: transparent;
-  border: 1px solid rgba(18, 26, 43, 0.12);
+  background: linear-gradient(155deg, rgba(255, 244, 230, 0.92), rgba(255, 230, 208, 0.88));
+  border: 1px solid rgba(18, 26, 43, 0.16);
   box-shadow: var(--shadow-soft);
   transform: translateY(24px);
   text-align: center;
@@ -541,6 +544,11 @@ p {
   .team-grid,
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+
+  .intro-note {
+    margin-left: 0;
+    width: 100%;
   }
 
   .app-block-reverse .app-copy,
