@@ -429,6 +429,10 @@ p {
   line-height: 1.76;
 }
 
+.app-summary-extra {
+  margin-top: 12px;
+}
+
 .app-list {
   display: grid;
   gap: 14px;
@@ -467,7 +471,7 @@ p {
 .app-visual img {
   position: relative;
   z-index: 1;
-  width: min(100%, 540px);
+  width: min(100%, 440px);
   height: auto;
   border-radius: 28px;
   box-shadow: 0 28px 70px rgba(17, 24, 39, 0.22);
