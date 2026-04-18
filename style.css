@@ -193,14 +193,14 @@ h3 {
 
 h1 {
   max-width: 10ch;
-  font-size: clamp(3.3rem, 6vw, 6.1rem);
+  font-size: clamp(2.9rem, 5.1vw, 5.3rem);
   line-height: 0.92;
   letter-spacing: -0.07em;
 }
 
 h2 {
   max-width: 12ch;
-  font-size: clamp(2.2rem, 4.3vw, 4rem);
+  font-size: clamp(1.95rem, 3.6vw, 3.35rem);
   line-height: 0.94;
   letter-spacing: -0.06em;
 }
@@ -435,26 +435,7 @@ p {
   align-items: center;
   justify-content: center;
   min-height: 100%;
-  padding: 26px 18px;
-  border-radius: 40px;
-  background:
-    radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.95), transparent 28%),
-    radial-gradient(circle at 78% 18%, rgba(191, 213, 255, 0.58), transparent 32%),
-    radial-gradient(circle at 62% 82%, rgba(255, 109, 77, 0.14), transparent 28%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(240, 244, 250, 0.88));
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  box-shadow: var(--shadow-deep);
-  overflow: hidden;
-}
-
-.app-visual::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.36), transparent 28%),
-    linear-gradient(0deg, rgba(255, 255, 255, 0.18), transparent 42%);
-  pointer-events: none;
+  padding: 0;
 }
 
 .app-visual img {
@@ -595,7 +576,11 @@ p {
   }
 
   h1 {
-    font-size: clamp(2.5rem, 13vw, 4.2rem);
+    font-size: clamp(2.2rem, 11vw, 3.6rem);
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 8.2vw, 2.45rem);
   }
 
   .intro-actions {
