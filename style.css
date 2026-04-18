@@ -259,14 +259,13 @@ p {
 .intro-note {
   position: relative;
   overflow: hidden;
-  padding: 28px 26px;
+  padding: 34px 30px;
   border-radius: var(--radius-xl);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 249, 252, 0.9)),
-    rgba(255, 255, 255, 0.82);
-  border: 1px solid rgba(18, 26, 43, 0.06);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(246, 248, 251, 0.78));
+  border: 1px solid rgba(18, 26, 43, 0.12);
   box-shadow: var(--shadow-soft);
-  transform: translateY(8px);
+  transform: translateY(24px);
+  text-align: center;
 }
 
 .intro-note::before {
@@ -274,33 +273,60 @@ p {
   position: absolute;
   inset: 0 0 auto;
   height: 4px;
-  background: linear-gradient(90deg, var(--accent) 0%, rgba(11, 99, 243, 0.2) 56%, transparent 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(18, 26, 43, 0.18) 0%,
+    rgba(18, 26, 43, 0.06) 56%,
+    transparent 100%
+  );
 }
 
-.note-label {
+.note-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.note-brand img {
+  width: clamp(68px, 9vw, 104px);
+  height: auto;
+}
+
+.note-brand p {
   color: var(--text);
-  font-size: 0.92rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-family: "Bebas Neue", "Manrope", "Avenir Next", "Segoe UI", sans-serif;
+  font-size: clamp(2rem, 4.8vw, 3.4rem);
+  letter-spacing: 0.03em;
+  line-height: 1;
 }
 
-.note-list {
-  margin: 18px 0 0;
-  padding: 0;
-  list-style: none;
+.note-appstore-row {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
 }
 
-.note-list li {
-  padding: 14px 0;
-  border-top: 1px solid rgba(18, 26, 43, 0.08);
+.note-appstore-link {
+  display: inline-flex;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(18, 26, 43, 0.12);
+}
+
+.note-appstore-link img {
+  width: min(280px, 100%);
+  height: auto;
+}
+
+.note-appstore-text {
   color: var(--muted-strong);
-  font-weight: 600;
-}
-
-.note-list li:first-child {
-  border-top: 0;
-  padding-top: 0;
+  font-weight: 700;
+  font-size: 0.98rem;
+  max-width: 22ch;
+  text-align: left;
 }
 
 .section {
@@ -591,6 +617,28 @@ p {
   .intro-actions a[aria-label="Télécharger dans le Mac App Store"] img {
     width: 100%;
     height: auto;
+  }
+
+  .note-brand {
+    gap: 14px;
+  }
+
+  .note-brand img {
+    width: clamp(58px, 17vw, 82px);
+  }
+
+  .note-brand p {
+    font-size: clamp(1.75rem, 10vw, 2.5rem);
+  }
+
+  .note-appstore-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .note-appstore-text {
+    max-width: none;
+    text-align: center;
   }
 
   .app-visual,
