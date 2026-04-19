@@ -309,7 +309,7 @@ p {
 }
 
 .note-appstore-link img {
-  width: min(280px, 100%);
+  width: min(460px, 100%);
   height: auto;
 }
 
@@ -752,6 +752,18 @@ p {
 .app-list strong {
   color: var(--text);
   font-weight: 400;
+}
+
+.app-store-badge-link {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 10px;
+}
+
+.app-store-badge-link img {
+  display: block;
+  width: clamp(112px, 24vw, 156px);
+  height: auto;
 }
 
 .app-visual {
