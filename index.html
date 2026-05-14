@@ -139,13 +139,15 @@
               </p>
             </div>
             <div class="app-spotlight-visual">
-              <img
-                id="spotlightImage"
-                src="assets/coupez-app.png"
-                alt="Coupez ! app preview"
-                width="976"
-                height="1706"
-              />
+              <button class="app-preview-button" id="spotlightPreviewButton" type="button">
+                <img
+                  id="spotlightImage"
+                  src="assets/coupez-app.png"
+                  alt="Coupez ! app preview"
+                  width="976"
+                  height="1706"
+                />
+              </button>
             </div>
             <div class="app-spotlight-bottom">
               <p class="app-summary app-summary-extra" id="spotlightExtra">
@@ -377,9 +379,24 @@
         </div>
       </footer>
     </main>
+
+    <div class="image-lightbox" id="imageLightbox" aria-hidden="true">
+      <button class="image-lightbox-backdrop" type="button" aria-label="Close preview"></button>
+      <div class="image-lightbox-frame" role="dialog" aria-modal="true" aria-label="App preview">
+        <button class="image-lightbox-close" id="imageLightboxClose" type="button" aria-label="Close preview">
+          ×
+        </button>
+        <img id="imageLightboxImage" src="assets/coupez-app.png" alt="" />
+      </div>
+    </div>
+
     <script>
       (function () {
         const dock = document.getElementById("appsDock");
+        const lightbox = document.getElementById("imageLightbox");
+        const lightboxImage = document.getElementById("imageLightboxImage");
+        const lightboxClose = document.getElementById("imageLightboxClose");
+        const previewButton = document.getElementById("spotlightPreviewButton");
         const spotlight = {
           kicker: document.getElementById("spotlightKicker"),
           title: document.getElementById("spotlightTitle"),
@@ -496,6 +513,22 @@
           });
         }
 
+        function openLightbox() {
+          lightboxImage.src = spotlight.image.src;
+          lightboxImage.alt = spotlight.image.alt;
+          lightbox.classList.add("is-open");
+          lightbox.setAttribute("aria-hidden", "false");
+          document.body.classList.add("is-lightbox-open");
+          lightboxClose.focus();
+        }
+
+        function closeLightbox() {
+          lightbox.classList.remove("is-open");
+          lightbox.setAttribute("aria-hidden", "true");
+          document.body.classList.remove("is-lightbox-open");
+          previewButton.focus();
+        }
+
         items.forEach((item) => {
           item.addEventListener("mouseenter", () => setActive(item));
           item.addEventListener("focus", () => setActive(item));
@@ -505,6 +538,14 @@
         dock.addEventListener("mousemove", (event) => applyDockScale(event.clientX));
         dock.addEventListener("mouseleave", resetDockScale);
         dock.addEventListener("touchstart", resetDockScale, { passive: true });
+        previewButton.addEventListener("click", openLightbox);
+        lightboxClose.addEventListener("click", closeLightbox);
+        lightbox.querySelector(".image-lightbox-backdrop").addEventListener("click", closeLightbox);
+        window.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
+            closeLightbox();
+          }
+        });
 
         const initialItem = getItemFromHash();
         if (initialItem) {
