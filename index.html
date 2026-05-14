@@ -6,14 +6,14 @@
     <title>GogoLabs</title>
     <meta
       name="description"
-      content="GogoLabs builds focused macOS tools for post-production: Coupez ! for cut detection and AAF workflows, Glass Master for loudness compliance and video finishing."
+      content="GogoLabs builds focused macOS tools for post-production: Coupez ! for cut detection and AAF workflows, Odile ! for music EDLs, FeedBacks ! for mix feedback markers, Glass Master for loudness compliance and video finishing."
     />
     <link rel="icon" type="image/png" href="/assets/favicon.png" />
     <link rel="apple-touch-icon" href="/assets/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lobster&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
@@ -45,11 +45,10 @@
         <section class="intro" id="studio">
           <div class="intro-copy">
             <p class="eyebrow">Software studio for post-production</p>
-            <h1>Focused tools for people who need the work to keep moving.</h1>
+            <h1>macOS tools for post-production.</h1>
             <p class="intro-lead">
-              GogoLabs builds macOS software for editors, mixers, and finishing teams. The studio
-              focuses on workflows where momentum is usually lost: repetitive checks, fragile
-              handoffs, and too many technical steps between analysis and delivery.
+              We design software for editors, mixers, and finishing teams where reliability,
+              clarity, and execution speed matter on every delivery.
             </p>
 
           </div>
@@ -57,7 +56,9 @@
           <div class="intro-note">
             <div class="note-brand">
               <img src="assets/gogolabs-logo.png" alt="Gogo Labs logo" width="900" height="900" />
-              <p>Gogo Labs</p>
+              <div class="note-brand-copy">
+                <p>Gogo Labs</p>
+              </div>
             </div>
             <div class="note-appstore-row">
               <a
@@ -74,7 +75,7 @@
                   height="82"
                 />
               </a>
-              <p class="note-appstore-text">see the developper&apos;s page</p>
+              <p class="note-appstore-text">Visit the developer page</p>
             </div>
           </div>
         </section>
@@ -119,101 +120,168 @@
       <section class="section apps" id="apps">
         <div class="section-heading">
           <p class="eyebrow">Apps</p>
-          <h2>Two focused products, each solving a specific drag on delivery.</h2>
+          <h2>Our apps.</h2>
         </div>
-
-        <article class="app-block">
-          <div class="app-copy app-copy-top">
-            <p class="app-kicker">For editors and conform teams</p>
-            <h3>Coupez !</h3>
-            <p class="app-summary">
-              <strong>Coupez ! turns picture analysis into export-ready conform work</strong>
-              <em>without forcing teams through brittle manual review.</em>
-            </p>
-          </div>
-
-          <div class="app-visual">
-            <img
-              src="assets/coupez-app.png"
-              alt="Coupez app preview"
-              width="1064"
-              height="1744"
-            />
-          </div>
-
-          <div class="app-copy app-copy-bottom">
-            <p class="app-summary app-summary-extra">
-              It is designed for real-world turnovers:
-              <strong>review decisions faster, keep an explicit shot-level trail,</strong>
-              <em>and hand off cleaner technical material with fewer last-minute corrections.</em>
-            </p>
-            <ul class="app-list">
-              <li>
-                <strong>Shot detection:</strong> adjustable confidence, interval, and shot-length
-                controls
-              </li>
-              <li>
-                <strong>Two-video compare:</strong> identify replace, move, and delete events
-                quickly
-              </li>
-              <li>
-                <strong>AAF + conform plans:</strong> export-ready material for downstream audio
-                workflows
-              </li>
-            </ul>
-            <a
-              class="app-store-badge-link"
-              href="https://apps.apple.com/fr/app/coupez/id6761286310?mt=12&itscg=30200&itsct=apps_box_badge&mttnsubad=6761286310"
-            >
+        <div class="apps-anchor-strip" aria-hidden="true">
+          <span class="apps-anchor" id="apps-coupez"></span>
+          <span class="apps-anchor" id="apps-odile"></span>
+          <span class="apps-anchor" id="apps-feedbacks"></span>
+          <span class="apps-anchor" id="apps-glass-master"></span>
+        </div>
+        <div class="apps-dock-shell">
+          <article class="app-spotlight" id="appSpotlight" aria-live="polite">
+            <div class="app-spotlight-copy">
+              <p class="app-kicker" id="spotlightKicker">For editors and conform teams</p>
+              <h3 id="spotlightTitle">Coupez !</h3>
+              <p class="app-summary" id="spotlightSummary">
+                <strong>Shot analysis to conform-ready output.</strong>
+                <em>Fast decisions, cleaner handoff.</em>
+              </p>
+            </div>
+            <div class="app-spotlight-visual">
               <img
-                src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1776211200"
-                alt="Download on the App Store"
+                id="spotlightImage"
+                src="assets/coupez-app.png"
+                alt="Coupez ! app preview"
+                width="976"
+                height="1706"
               />
-            </a>
-          </div>
-        </article>
+            </div>
+            <div class="app-spotlight-bottom">
+              <p class="app-summary app-summary-extra" id="spotlightExtra">
+                Built for real turnovers:
+                <strong>track every cut decision with precision,</strong>
+                <em>then export material that downstream teams trust.</em>
+              </p>
+              <ul class="app-list" id="spotlightList">
+                <li>
+                  <strong>Shot detection:</strong> adjustable confidence, interval, and shot-length
+                  controls
+                </li>
+                <li>
+                  <strong>Two-video compare:</strong> identify replace, move, and delete events
+                  quickly
+                </li>
+                <li>
+                  <strong>AAF + conform plans:</strong> export-ready material for downstream audio
+                  workflows
+                </li>
+              </ul>
+              <a class="app-store-badge-link" id="spotlightLink" href="https://apps.apple.com/fr/app/coupez/id6761286310?mt=12&itscg=30200&itsct=apps_box_badge&mttnsubad=6761286310">
+                <img
+                  src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1776211200"
+                  alt="Download on the App Store"
+                />
+              </a>
+            </div>
+          </article>
 
-        <article class="app-block">
-          <div class="app-copy app-copy-top">
-            <p class="app-kicker">For mixers, QC, and finishing</p>
-            <h3>Glass Master</h3>
-            <p class="app-summary">
-              <strong>Glass Master brings loudness analysis, dialogue measurement, reporting,</strong>
-              <em>and final delivery actions into one controlled macOS workspace.</em>
-            </p>
-          </div>
+          <div class="apps-dock-wrap">
+            <p class="apps-dock-hint">Hover or tap an app</p>
+            <div class="apps-dock" id="appsDock">
+              <button
+                class="dock-item is-active"
+                data-app="coupez"
+                data-kicker="For editors and conform teams"
+                data-title="Coupez !"
+                data-summary-strong="Shot analysis to conform-ready output."
+                data-summary-em="Fast decisions, cleaner handoff."
+                data-extra-prefix="Built for real turnovers:"
+                data-extra-strong="track every cut decision with precision,"
+                data-extra-em="then export material that downstream teams trust."
+                data-li-1-strong="Shot detection:"
+                data-li-1-text="adjustable confidence, interval, and shot-length controls"
+                data-li-2-strong="Two-video compare:"
+                data-li-2-text="identify replace, move, and delete events quickly"
+                data-li-3-strong="AAF + conform plans:"
+                data-li-3-text="export-ready material for downstream audio workflows"
+                data-link="https://apps.apple.com/fr/app/coupez/id6761286310?mt=12&itscg=30200&itsct=apps_box_badge&mttnsubad=6761286310"
+                data-image="assets/coupez-app.png"
+                data-alt="Coupez ! app preview"
+                data-preview="tall"
+              >
+                <img src="assets/coupez-icon.png" alt="" />
+                <span>Coupez !</span>
+              </button>
 
-          <div class="app-visual">
-            <img
-              src="assets/glass-master-app.png"
-              alt="Glass Master app preview"
-              width="1064"
-              height="1580"
-            />
-          </div>
+              <button
+                class="dock-item"
+                data-app="glass-master"
+                data-kicker="For mixers, QC, and finishing"
+                data-title="Glass Master"
+                data-summary-strong="Complete loudness and delivery control."
+                data-summary-em="Measure, verify, and deliver in one workspace."
+                data-extra-prefix="Built to reduce context switching:"
+                data-extra-strong="validate targets, inspect sections, and export reports,"
+                data-extra-em="without rebuilding the workflow before delivery."
+                data-li-1-strong="Single-pass metering:"
+                data-li-1-text="Integrated, LRA, True Peak, duration, and timing context"
+                data-li-2-strong="Dialogue intelligence:"
+                data-li-2-text="platform-oriented presets for faster validation"
+                data-li-3-strong="Finishing outputs:"
+                data-li-3-text="reports and exports without jumping across multiple tools"
+                data-link="https://apps.apple.com/fr/developer/gautier-de-faultrier/id1887696838?itscg=30200&itsct=apps_box_badge&mttnsubad=1887696838"
+                data-image="assets/glass-master-app.png"
+                data-alt="Glass Master app preview"
+                data-preview="tall"
+              >
+                <img src="assets/glass-master-icon.png" alt="" />
+                <span>Glass Master</span>
+              </button>
 
-          <div class="app-copy app-copy-bottom">
-            <p class="app-summary app-summary-extra">
-              The goal is to reduce context switching during final checks:
-              <strong>validate compliance targets, inspect sections with timing anchors,</strong>
-              <em>and produce dependable reports before delivery without rebuilding the workflow.</em>
-            </p>
-            <ul class="app-list">
-              <li>
-                <strong>Single-pass metering:</strong> Integrated, LRA, True Peak, duration, and
-                timing context
-              </li>
-              <li>
-                <strong>Dialogue intelligence:</strong> platform-oriented presets for faster
-                validation
-              </li>
-              <li>
-                <strong>Finishing outputs:</strong> reports and exports without jumping across
-                multiple tools
-              </li>
-            </ul>
+              <button
+                class="dock-item"
+                data-app="odile"
+                data-kicker="For music editors and Pro Tools teams"
+                data-title="Odile !"
+                data-summary-strong="Selected Pro Tools tracks to clean music EDL."
+                data-summary-em="No manual cue-sheet rebuild."
+                data-extra-prefix="Built around the live session:"
+                data-extra-strong="read tracks, clean rows, apply offsets,"
+                data-extra-em="then export XLSX or send markers back to Pro Tools."
+                data-li-1-strong="PTSL reading:"
+                data-li-1-text="import selected Pro Tools tracks with timing context"
+                data-li-2-strong="Music EDL cleanup:"
+                data-li-2-text="edit rows, merge selections, delete noise, and keep durations visible"
+                data-li-3-strong="Markers + XLSX:"
+                data-li-3-text="create Pro Tools markers and export formatted spreadsheets"
+                data-link="https://apps.apple.com/fr/developer/gautier-de-faultrier/id1887696838?itscg=30200&itsct=apps_box_badge&mttnsubad=1887696838"
+                data-image="assets/odile-app.png"
+                data-alt="Odile ! app preview"
+                data-preview="wide"
+              >
+                <img src="assets/odile-icon.png" alt="" />
+                <span>Odile !</span>
+              </button>
+
+              <button
+                class="dock-item"
+                data-app="feedbacks"
+                data-kicker="For mixers and review sessions"
+                data-title="FeedBacks !"
+                data-summary-strong="Mix notes to timeline-ready markers."
+                data-summary-em="From text or clipboard to session, fast."
+                data-extra-prefix="Built for review cleanup:"
+                data-extra-strong="parse rows, preview marker settings,"
+                data-extra-em="then import to Pro Tools or export AAF."
+                data-li-1-strong="Text import:"
+                data-li-1-text="choose a feedback file or paste notes directly from the clipboard"
+                data-li-2-strong="Marker preparation:"
+                data-li-2-text="preview parsed rows, colors, names, ruler, and frame rate"
+                data-li-3-strong="Pro Tools + AAF:"
+                data-li-3-text="import markers into Pro Tools or export an AAF marker file"
+                data-link="https://apps.apple.com/fr/developer/gautier-de-faultrier/id1887696838?itscg=30200&itsct=apps_box_badge&mttnsubad=1887696838"
+                data-image="assets/feedbacks-app.png"
+                data-alt="FeedBacks ! app preview"
+                data-preview="wide"
+                data-trim="sides"
+              >
+                <img src="assets/feedbacks-icon.png" alt="" />
+                <span>FeedBacks !</span>
+              </button>
+            </div>
           </div>
-        </article>
+        </div>
       </section>
 
       <section class="section team-section" id="team">
@@ -224,22 +292,40 @@
 
         <div class="team-grid">
           <article class="team-entry">
-            <h3>Gautier de Faultrier</h3>
-            <p>
-              After more than 20 years as a re-recording mixer, Gautier de Faultrier founded Gogo
-              Labs in 2026 to build software shaped by the real demands of post-production. He
-              leads product and engineering with a clear focus on precision, control, and
-              reliability, creating tools that solve concrete workflow problems without unnecessary
-              complexity.
-            </p>
+            <img
+              class="team-photo"
+              src="assets/team-gautier.png"
+              alt="Gautier de Faultrier in the studio"
+              width="1458"
+              height="1442"
+            />
+            <div class="team-copy">
+              <h3>Gautier de Faultrier</h3>
+              <p>
+                After more than 20 years as a re-recording mixer, Gautier de Faultrier founded Gogo
+                Labs in 2026 to build software shaped by the real demands of post-production. He
+                leads product and engineering with a clear focus on precision, control, and
+                reliability, creating tools that solve concrete workflow problems without unnecessary
+                complexity.
+              </p>
+            </div>
           </article>
 
           <article class="team-entry">
-            <h3>Anne-Charlotte Labbé</h3>
-            <p>
-              Shapes direction, messaging, and clarity so each product decision stays grounded in
-              real user needs.
-            </p>
+            <img
+              class="team-photo"
+              src="assets/team-anne-charlotte.png"
+              alt="Anne-Charlotte Labbe portrait"
+              width="1487"
+              height="2540"
+            />
+            <div class="team-copy">
+              <h3>Anne-Charlotte Labbé</h3>
+              <p>
+                Shapes direction, messaging, and clarity so each product decision stays grounded in
+                real user needs.
+              </p>
+            </div>
           </article>
         </div>
       </section>
@@ -261,8 +347,10 @@
 
           <div class="footer-column">
             <h3>Products</h3>
-            <a href="#apps">Coupez !</a>
-            <a href="#apps">Glass Master</a>
+            <a href="#apps-coupez">Coupez !</a>
+            <a href="#apps-odile">Odile !</a>
+            <a href="#apps-feedbacks">FeedBacks !</a>
+            <a href="#apps-glass-master">Glass Master</a>
             <a
               href="https://apps.apple.com/fr/developer/gautier-de-faultrier/id1736156363"
               target="_blank"
@@ -289,5 +377,147 @@
         </div>
       </footer>
     </main>
+    <script>
+      (function () {
+        const dock = document.getElementById("appsDock");
+        const spotlight = {
+          kicker: document.getElementById("spotlightKicker"),
+          title: document.getElementById("spotlightTitle"),
+          summary: document.getElementById("spotlightSummary"),
+          image: document.getElementById("spotlightImage"),
+          extra: document.getElementById("spotlightExtra"),
+          list: document.getElementById("spotlightList"),
+          link: document.getElementById("spotlightLink"),
+        };
+        if (!dock) return;
+
+        const items = Array.from(dock.querySelectorAll(".dock-item"));
+        const itemsByApp = new Map(
+          items.map((item) => [item.dataset.app || "", item])
+        );
+
+        function getData(item, name) {
+          return item.getAttribute("data-" + name) || "";
+        }
+
+        function setSummary(node, strongText, emText) {
+          node.textContent = "";
+          const strong = document.createElement("strong");
+          strong.textContent = strongText || "";
+          const spacer = document.createTextNode(" ");
+          const em = document.createElement("em");
+          em.textContent = emText || "";
+          node.appendChild(strong);
+          node.appendChild(spacer);
+          node.appendChild(em);
+        }
+
+        function setList(listNode, entries) {
+          listNode.textContent = "";
+          entries.forEach(([strongText, plainText]) => {
+            const li = document.createElement("li");
+            const strong = document.createElement("strong");
+            strong.textContent = strongText || "";
+            li.appendChild(strong);
+            li.appendChild(document.createTextNode(" " + (plainText || "")));
+            listNode.appendChild(li);
+          });
+        }
+
+        function setActive(item) {
+          const spotlightCard = spotlight.image.closest(".app-spotlight");
+          items.forEach((el) => el.classList.remove("is-active"));
+          item.classList.add("is-active");
+          spotlightCard.classList.toggle("is-wide-preview", item.dataset.preview === "wide");
+          spotlightCard.classList.toggle("is-side-trimmed-preview", item.dataset.trim === "sides");
+          spotlight.kicker.textContent = item.dataset.kicker || "";
+          spotlight.title.textContent = item.dataset.title || "";
+          setSummary(spotlight.summary, item.dataset.summaryStrong, item.dataset.summaryEm);
+          const nextSrc = item.dataset.image || "";
+          const nextAlt = item.dataset.alt || "";
+          if (nextSrc && spotlight.image.src !== new URL(nextSrc, window.location.href).href) {
+            spotlight.image.classList.add("is-transitioning");
+            const preload = new Image();
+            preload.onload = function () {
+              spotlight.image.src = nextSrc;
+              spotlight.image.alt = nextAlt;
+              requestAnimationFrame(() => {
+                spotlight.image.classList.remove("is-transitioning");
+              });
+            };
+            preload.onerror = function () {
+              spotlight.image.src = nextSrc;
+              spotlight.image.alt = nextAlt;
+              spotlight.image.classList.remove("is-transitioning");
+            };
+            preload.src = nextSrc;
+          } else {
+            spotlight.image.alt = nextAlt;
+          }
+          spotlight.extra.textContent = (item.dataset.extraPrefix || "") + " ";
+          const extraStrong = document.createElement("strong");
+          extraStrong.textContent = item.dataset.extraStrong || "";
+          const extraEm = document.createElement("em");
+          extraEm.textContent = " " + (item.dataset.extraEm || "");
+          spotlight.extra.appendChild(extraStrong);
+          spotlight.extra.appendChild(extraEm);
+          setList(spotlight.list, [
+            [getData(item, "li-1-strong"), getData(item, "li-1-text")],
+            [getData(item, "li-2-strong"), getData(item, "li-2-text")],
+            [getData(item, "li-3-strong"), getData(item, "li-3-text")],
+          ]);
+          spotlight.link.href = item.dataset.link || "#";
+        }
+
+        function getItemFromHash() {
+          const match = window.location.hash.match(/^#apps-([a-z-]+)$/);
+          if (!match) return null;
+          return itemsByApp.get(match[1]) || null;
+        }
+
+        function applyDockScale(clientX) {
+          items.forEach((item) => {
+            const rect = item.getBoundingClientRect();
+            const center = rect.left + rect.width / 2;
+            const distance = Math.abs(clientX - center);
+            const maxDistance = 190;
+            const ratio = Math.max(0, 1 - distance / maxDistance);
+            const scale = 1 + ratio * 0.72;
+            const lift = -ratio * 16;
+            item.style.setProperty("--dock-scale", scale.toFixed(3));
+            item.style.setProperty("--dock-lift", lift.toFixed(2) + "px");
+          });
+        }
+
+        function resetDockScale() {
+          items.forEach((item) => {
+            item.style.setProperty("--dock-scale", "1");
+            item.style.setProperty("--dock-lift", "0px");
+          });
+        }
+
+        items.forEach((item) => {
+          item.addEventListener("mouseenter", () => setActive(item));
+          item.addEventListener("focus", () => setActive(item));
+          item.addEventListener("click", () => setActive(item));
+        });
+
+        dock.addEventListener("mousemove", (event) => applyDockScale(event.clientX));
+        dock.addEventListener("mouseleave", resetDockScale);
+        dock.addEventListener("touchstart", resetDockScale, { passive: true });
+
+        const initialItem = getItemFromHash();
+        if (initialItem) {
+          setActive(initialItem);
+        }
+
+        window.addEventListener("hashchange", () => {
+          const nextItem = getItemFromHash();
+          if (nextItem) {
+            setActive(nextItem);
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
