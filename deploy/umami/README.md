@@ -4,7 +4,27 @@ This directory is a Railway-ready Umami service. Railway runs the Umami
 container, Railway PostgreSQL stores the analytics data, and Railway handles
 HTTPS/custom-domain routing for `stats.gogolabs.fr`.
 
-## Railway setup
+## Current setup
+
+- Railway service: `gogolabs.fr`
+- Public analytics domain: `https://stats.gogolabs.fr`
+- Tracked website: `gogolabs.fr`
+- Website ID: `120e76d3-42e2-4463-8098-781e5417f478`
+
+The site pages load Umami with:
+
+```html
+<script defer src="https://stats.gogolabs.fr/script.js" data-website-id="120e76d3-42e2-4463-8098-781e5417f478"></script>
+```
+
+If the Railway-generated domain is still present in Public Networking, it can
+be removed after confirming this command returns HTTP 200:
+
+```sh
+curl -I https://stats.gogolabs.fr/script.js
+```
+
+## Railway setup from scratch
 
 Umami's official Railway guide also recommends Railway as the quickest hosted
 self-host path:
@@ -79,6 +99,6 @@ The tracking code will look like this:
 <script
   defer
   src="https://stats.gogolabs.fr/script.js"
-  data-website-id="YOUR-WEBSITE-ID"
+  data-website-id="120e76d3-42e2-4463-8098-781e5417f478"
 ></script>
 ```
