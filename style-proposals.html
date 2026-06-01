@@ -1,0 +1,1112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GogoLabs Style Proposals</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=IBM+Plex+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,700;6..72,800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #121417;
+        --muted: #66707a;
+        --line: rgba(18, 20, 23, 0.14);
+        --page: #f4f2ed;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--page);
+        color: var(--ink);
+        font-family: Inter, system-ui, sans-serif;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .proposal-index {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 14px clamp(18px, 3vw, 36px);
+        border-bottom: 1px solid rgba(18, 20, 23, 0.12);
+        background: rgba(244, 242, 237, 0.9);
+        backdrop-filter: blur(14px);
+      }
+
+      .proposal-index strong {
+        font-size: 0.84rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .proposal-index nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: flex-end;
+      }
+
+      .proposal-index a {
+        padding: 8px 10px;
+        border: 1px solid rgba(18, 20, 23, 0.16);
+        border-radius: 999px;
+        text-decoration: none;
+        color: #343b44;
+        font-size: 0.78rem;
+        font-weight: 700;
+      }
+
+      .proposal {
+        min-height: 100vh;
+        padding: clamp(24px, 4vw, 52px);
+        border-bottom: 1px solid rgba(18, 20, 23, 0.14);
+      }
+
+      .proposal-meta {
+        display: grid;
+        grid-template-columns: minmax(0, 0.82fr) minmax(260px, 0.38fr);
+        gap: 22px;
+        align-items: end;
+        max-width: 1320px;
+        margin: 0 auto 22px;
+      }
+
+      .proposal-meta p {
+        margin: 8px 0 0;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .proposal-label {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.76rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .proposal-title {
+        margin: 8px 0 0;
+        font-size: clamp(2rem, 4vw, 4rem);
+        line-height: 0.96;
+        letter-spacing: -0.05em;
+      }
+
+      .proposal-notes {
+        display: grid;
+        gap: 8px;
+        padding: 14px;
+        border: 1px solid var(--line);
+      }
+
+      .proposal-notes span {
+        font-size: 0.78rem;
+        font-weight: 700;
+      }
+
+      .mock-site {
+        max-width: 1320px;
+        margin: 0 auto;
+        overflow: hidden;
+        border: 1px solid rgba(18, 20, 23, 0.14);
+        background: #fff;
+        box-shadow: 0 30px 70px rgba(25, 29, 36, 0.13);
+      }
+
+      .mock-topbar,
+      .mock-hero,
+      .mock-band,
+      .mock-footer {
+        padding-inline: clamp(20px, 4vw, 56px);
+      }
+
+      .mock-topbar {
+        min-height: 78px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+      }
+
+      .mock-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .mock-brand img {
+        width: 42px;
+        height: 42px;
+      }
+
+      .mock-nav {
+        display: flex;
+        gap: 16px;
+        color: inherit;
+        font-size: 0.82rem;
+        font-weight: 700;
+      }
+
+      .mock-nav span {
+        white-space: nowrap;
+      }
+
+      .mock-hero {
+        display: grid;
+        grid-template-columns: minmax(0, 0.8fr) minmax(320px, 0.62fr);
+        gap: clamp(28px, 5vw, 70px);
+        align-items: center;
+        min-height: 560px;
+        padding-block: clamp(34px, 6vw, 82px);
+      }
+
+      .eyebrow {
+        margin: 0 0 14px;
+        font-size: 0.72rem;
+        font-weight: 900;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      .mock-hero h1 {
+        max-width: 10ch;
+        font-size: clamp(3rem, 7vw, 7.8rem);
+        line-height: 0.86;
+        letter-spacing: -0.07em;
+      }
+
+      .mock-lead {
+        max-width: 58ch;
+        margin-top: 22px;
+        font-size: clamp(1rem, 1.4vw, 1.18rem);
+        line-height: 1.65;
+      }
+
+      .mock-visual {
+        position: relative;
+        min-height: 420px;
+      }
+
+      .app-shot {
+        position: absolute;
+        overflow: hidden;
+      }
+
+      .app-shot img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .icon-row {
+        display: flex;
+        gap: 10px;
+        margin-top: 26px;
+      }
+
+      .icon-row img {
+        width: 54px;
+        height: 54px;
+      }
+
+      .mock-band {
+        padding-block: 46px;
+      }
+
+      .mock-section-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 28px;
+      }
+
+      .mock-section-head h2 {
+        max-width: 720px;
+        font-size: clamp(1.8rem, 3vw, 3rem);
+        line-height: 1;
+        letter-spacing: -0.04em;
+      }
+
+      .principle-grid,
+      .product-grid,
+      .team-grid {
+        display: grid;
+        gap: 14px;
+      }
+
+      .principle-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .team-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .principle-card,
+      .product-card,
+      .team-card {
+        min-width: 0;
+        padding: 18px;
+      }
+
+      .principle-card h3,
+      .product-card h3,
+      .team-card h3 {
+        margin-bottom: 10px;
+        font-size: 1.08rem;
+        line-height: 1.1;
+      }
+
+      .principle-card p,
+      .product-card p,
+      .team-card p,
+      .mock-footer p {
+        color: inherit;
+        font-size: 0.9rem;
+        line-height: 1.55;
+      }
+
+      .product-card img {
+        width: 54px;
+        height: 54px;
+        margin-bottom: 14px;
+      }
+
+      .team-card {
+        display: grid;
+        grid-template-columns: 104px minmax(0, 1fr);
+        gap: 16px;
+        align-items: start;
+      }
+
+      .team-card img {
+        width: 104px;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+      }
+
+      .mock-footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding-block: 34px;
+      }
+
+      .mock-footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        font-size: 0.82rem;
+        font-weight: 700;
+      }
+
+      .style-a {
+        --a-bg: #090b0f;
+        --a-panel: #111821;
+        --a-text: #f3f6f7;
+        --a-muted: #9cabb7;
+        --a-cyan: #4bd6ff;
+        --a-red: #ff5161;
+        background: #151719;
+      }
+
+      .style-a .proposal-title {
+        color: var(--a-text);
+      }
+
+      .style-a .proposal-meta p,
+      .style-a .proposal-notes {
+        color: var(--a-muted);
+      }
+
+      .style-a .proposal-notes {
+        border-color: rgba(75, 214, 255, 0.24);
+        background: rgba(9, 11, 15, 0.45);
+      }
+
+      .style-a .proposal-notes span {
+        color: var(--a-text);
+      }
+
+      .style-a .mock-site {
+        background:
+          linear-gradient(90deg, rgba(75, 214, 255, 0.05) 1px, transparent 1px),
+          linear-gradient(180deg, rgba(75, 214, 255, 0.04) 1px, transparent 1px),
+          var(--a-bg);
+        background-size: 42px 42px;
+        color: var(--a-text);
+        border-color: rgba(75, 214, 255, 0.3);
+        box-shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
+      }
+
+      .style-a .mock-topbar {
+        border-bottom: 1px solid rgba(75, 214, 255, 0.24);
+        font-family: "IBM Plex Mono", monospace;
+      }
+
+      .style-a .mock-nav,
+      .style-a .mock-lead,
+      .style-a .principle-card p,
+      .style-a .product-card p,
+      .style-a .team-card p,
+      .style-a .mock-footer p {
+        color: var(--a-muted);
+      }
+
+      .style-a .eyebrow,
+      .style-a .mock-section-head .eyebrow {
+        color: var(--a-cyan);
+        font-family: "IBM Plex Mono", monospace;
+      }
+
+      .style-a h1,
+      .style-a h2,
+      .style-a h3 {
+        font-family: Archivo, Inter, sans-serif;
+        text-transform: uppercase;
+      }
+
+      .style-a .mock-visual::before {
+        content: "LOCAL-FIRST / OPERATOR MODE";
+        position: absolute;
+        left: 0;
+        top: 16px;
+        z-index: 2;
+        padding: 8px 10px;
+        border: 1px solid rgba(75, 214, 255, 0.36);
+        background: rgba(9, 11, 15, 0.78);
+        color: var(--a-cyan);
+        font: 700 0.72rem "IBM Plex Mono", monospace;
+        letter-spacing: 0.08em;
+      }
+
+      .style-a .app-shot.main {
+        inset: 52px 28px 34px 56px;
+        border: 1px solid rgba(75, 214, 255, 0.42);
+        box-shadow: 0 0 0 8px rgba(75, 214, 255, 0.05), 0 28px 90px rgba(0, 0, 0, 0.42);
+      }
+
+      .style-a .app-shot.secondary {
+        right: 0;
+        bottom: 0;
+        width: 46%;
+        height: 38%;
+        border: 1px solid rgba(255, 81, 97, 0.48);
+      }
+
+      .style-a .icon-row img {
+        border-radius: 14px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.42);
+      }
+
+      .style-a .mock-band {
+        border-top: 1px solid rgba(75, 214, 255, 0.16);
+      }
+
+      .style-a .principle-card,
+      .style-a .product-card,
+      .style-a .team-card {
+        border: 1px solid rgba(75, 214, 255, 0.18);
+        background: rgba(17, 24, 33, 0.88);
+      }
+
+      .style-a .team-card img {
+        filter: grayscale(1) contrast(1.1);
+      }
+
+      .style-a .mock-footer {
+        border-top: 1px solid rgba(75, 214, 255, 0.18);
+        color: var(--a-muted);
+      }
+
+      .style-b {
+        --b-bg: #fbfbf8;
+        --b-paper: #ffffff;
+        --b-text: #101113;
+        --b-muted: #59636e;
+        --b-line: #dfe3e7;
+        --b-blue: #0969da;
+        background: #e9ecef;
+      }
+
+      .style-b .mock-site {
+        background: var(--b-bg);
+        color: var(--b-text);
+        border-radius: 28px;
+      }
+
+      .style-b .mock-topbar {
+        margin: 12px;
+        border: 1px solid var(--b-line);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.82);
+      }
+
+      .style-b .mock-nav,
+      .style-b .mock-lead,
+      .style-b .principle-card p,
+      .style-b .product-card p,
+      .style-b .team-card p,
+      .style-b .mock-footer p {
+        color: var(--b-muted);
+      }
+
+      .style-b .eyebrow {
+        color: var(--b-blue);
+      }
+
+      .style-b .mock-hero h1 {
+        max-width: 11ch;
+        font-size: clamp(3rem, 6vw, 6.2rem);
+      }
+
+      .style-b .mock-visual {
+        min-height: 460px;
+        border-radius: 30px;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(233, 237, 241, 0.74)),
+          radial-gradient(circle at 24% 18%, rgba(9, 105, 218, 0.13), transparent 36%);
+        border: 1px solid var(--b-line);
+      }
+
+      .style-b .app-shot.main {
+        inset: 34px 54px 34px 54px;
+        border-radius: 24px;
+        box-shadow: 0 22px 50px rgba(26, 38, 54, 0.22);
+      }
+
+      .style-b .app-shot.secondary {
+        left: 20px;
+        bottom: 22px;
+        width: 35%;
+        height: 32%;
+        border-radius: 18px;
+        box-shadow: 0 18px 44px rgba(26, 38, 54, 0.2);
+      }
+
+      .style-b .icon-row img,
+      .style-b .product-card img {
+        border-radius: 14px;
+      }
+
+      .style-b .principle-card,
+      .style-b .product-card,
+      .style-b .team-card {
+        border: 1px solid var(--b-line);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.78);
+      }
+
+      .style-b .team-card img {
+        border-radius: 16px;
+      }
+
+      .style-b .mock-footer {
+        border-top: 1px solid var(--b-line);
+      }
+
+      .style-c {
+        --c-bg: #efe8de;
+        --c-ink: #211b18;
+        --c-muted: #766a60;
+        --c-red: #b4332a;
+        --c-yellow: #e6b63f;
+        background: #d7cec2;
+      }
+
+      .style-c .mock-site {
+        background: var(--c-bg);
+        color: var(--c-ink);
+      }
+
+      .style-c .mock-topbar {
+        min-height: 92px;
+        border-bottom: 2px solid var(--c-ink);
+        font-family: "IBM Plex Mono", monospace;
+      }
+
+      .style-c .mock-brand {
+        letter-spacing: 0;
+      }
+
+      .style-c .mock-nav {
+        color: var(--c-muted);
+      }
+
+      .style-c h1,
+      .style-c h2 {
+        font-family: Newsreader, Georgia, serif;
+        letter-spacing: -0.055em;
+      }
+
+      .style-c h3,
+      .style-c .eyebrow {
+        font-family: "IBM Plex Mono", monospace;
+      }
+
+      .style-c .mock-lead,
+      .style-c .principle-card p,
+      .style-c .product-card p,
+      .style-c .team-card p,
+      .style-c .mock-footer p {
+        color: var(--c-muted);
+      }
+
+      .style-c .eyebrow {
+        color: var(--c-red);
+      }
+
+      .style-c .mock-hero {
+        grid-template-columns: minmax(0, 0.72fr) minmax(360px, 0.78fr);
+      }
+
+      .style-c .mock-visual {
+        min-height: 520px;
+        background: #19130f;
+      }
+
+      .style-c .mock-visual::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(90deg, rgba(230, 182, 63, 0.22) 0 1px, transparent 1px 18px),
+          linear-gradient(180deg, transparent, rgba(33, 27, 24, 0.72));
+        pointer-events: none;
+      }
+
+      .style-c .app-shot.main {
+        inset: 0;
+      }
+
+      .style-c .app-shot.secondary {
+        left: -1px;
+        bottom: -1px;
+        z-index: 2;
+        width: 58%;
+        height: 42%;
+        border: 2px solid var(--c-yellow);
+      }
+
+      .style-c .icon-row img {
+        border-radius: 0;
+        border: 2px solid var(--c-ink);
+      }
+
+      .style-c .mock-section-head {
+        border-top: 2px solid var(--c-ink);
+        padding-top: 20px;
+      }
+
+      .style-c .principle-card,
+      .style-c .product-card,
+      .style-c .team-card {
+        border: 2px solid var(--c-ink);
+        background: #f7f0e4;
+      }
+
+      .style-c .product-card:nth-child(even),
+      .style-c .principle-card:nth-child(2) {
+        background: #e5d5bd;
+      }
+
+      .style-c .team-card img {
+        filter: sepia(0.22) contrast(1.08);
+      }
+
+      .style-c .mock-footer {
+        border-top: 2px solid var(--c-ink);
+      }
+
+      .style-d {
+        --d-bg: #f5f7f8;
+        --d-panel: #ffffff;
+        --d-ink: #17202a;
+        --d-muted: #65717d;
+        --d-line: #cfd7df;
+        --d-green: #12805c;
+        --d-orange: #d96c06;
+        background: #dce3e8;
+      }
+
+      .style-d .mock-site {
+        background: var(--d-bg);
+        color: var(--d-ink);
+      }
+
+      .style-d .mock-topbar {
+        min-height: 66px;
+        border-bottom: 1px solid var(--d-line);
+        background: #fff;
+      }
+
+      .style-d .mock-brand,
+      .style-d .mock-nav,
+      .style-d .eyebrow,
+      .style-d h1,
+      .style-d h2,
+      .style-d h3 {
+        font-family: "IBM Plex Mono", monospace;
+      }
+
+      .style-d .mock-hero {
+        grid-template-columns: minmax(0, 0.64fr) minmax(460px, 0.84fr);
+        min-height: 500px;
+      }
+
+      .style-d .mock-hero h1 {
+        max-width: 13ch;
+        font-size: clamp(2.2rem, 4.6vw, 5.2rem);
+        line-height: 0.94;
+        letter-spacing: -0.05em;
+      }
+
+      .style-d .mock-lead,
+      .style-d .principle-card p,
+      .style-d .product-card p,
+      .style-d .team-card p,
+      .style-d .mock-footer p {
+        color: var(--d-muted);
+      }
+
+      .style-d .eyebrow {
+        color: var(--d-green);
+      }
+
+      .style-d .mock-visual {
+        min-height: 430px;
+        display: grid;
+        grid-template-columns: 1fr 0.9fr;
+        gap: 12px;
+      }
+
+      .style-d .mock-visual::before,
+      .style-d .mock-visual::after {
+        content: "STATUS READY";
+        position: absolute;
+        z-index: 3;
+        top: 12px;
+        right: 12px;
+        padding: 7px 9px;
+        background: var(--d-green);
+        color: #fff;
+        font: 700 0.72rem "IBM Plex Mono", monospace;
+      }
+
+      .style-d .mock-visual::after {
+        content: "EXPORT QUEUE";
+        top: auto;
+        right: auto;
+        left: 12px;
+        bottom: 12px;
+        background: var(--d-orange);
+      }
+
+      .style-d .app-shot.main {
+        inset: 0 42% 0 0;
+        border: 1px solid var(--d-line);
+      }
+
+      .style-d .app-shot.secondary {
+        inset: 0 0 0 60%;
+        border: 1px solid var(--d-line);
+      }
+
+      .style-d .icon-row img,
+      .style-d .product-card img {
+        border-radius: 8px;
+      }
+
+      .style-d .principle-grid,
+      .style-d .product-grid {
+        gap: 8px;
+      }
+
+      .style-d .principle-card,
+      .style-d .product-card,
+      .style-d .team-card {
+        border: 1px solid var(--d-line);
+        background: var(--d-panel);
+      }
+
+      .style-d .principle-card {
+        display: grid;
+        grid-template-columns: 38px minmax(0, 1fr);
+        gap: 12px;
+      }
+
+      .style-d .principle-card::before {
+        content: attr(data-index);
+        color: var(--d-green);
+        font: 700 0.92rem "IBM Plex Mono", monospace;
+      }
+
+      .style-d .principle-card h3 {
+        margin-top: 0;
+      }
+
+      .style-d .team-card img {
+        border-radius: 8px;
+      }
+
+      .style-d .mock-footer {
+        border-top: 1px solid var(--d-line);
+        background: #fff;
+      }
+
+      @media (max-width: 900px) {
+        .proposal-meta,
+        .mock-hero,
+        .style-c .mock-hero,
+        .style-d .mock-hero {
+          grid-template-columns: 1fr;
+        }
+
+        .mock-nav {
+          display: none;
+        }
+
+        .principle-grid,
+        .product-grid,
+        .team-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .mock-section-head,
+        .mock-footer {
+          display: grid;
+        }
+
+        .style-d .mock-visual {
+          min-height: 360px;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .proposal {
+          padding-inline: 14px;
+        }
+
+        .proposal-index {
+          position: static;
+          display: grid;
+        }
+
+        .mock-topbar,
+        .mock-hero,
+        .mock-band,
+        .mock-footer {
+          padding-inline: 18px;
+        }
+
+        .team-card {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="proposal-index">
+      <strong>GogoLabs style proposals</strong>
+      <nav aria-label="Style proposals">
+        <a href="#control-room">Control room</a>
+        <a href="#mac-native">Mac native</a>
+        <a href="#editorial">Editorial print</a>
+        <a href="#ops-console">Ops console</a>
+      </nav>
+    </header>
+
+    <section class="proposal style-a" id="control-room">
+      <div class="proposal-meta">
+        <div>
+          <p class="proposal-label">Style 01</p>
+          <h2 class="proposal-title">Control room technique</h2>
+          <p>
+            Une direction sombre, très post-production, avec grille de monitoring, contraste fort et
+            visuels logiciels présentés comme des écrans de régie.
+          </p>
+        </div>
+        <div class="proposal-notes">
+          <span>Ambiance: précision, QC, studio nuit</span>
+          <span>Typo: Archivo + IBM Plex Mono</span>
+          <span>Palette: noir graphite, cyan, rouge signal</span>
+        </div>
+      </div>
+
+      <div class="mock-site">
+        <div class="mock-topbar">
+          <div class="mock-brand">
+            <img src="assets/gogolabs-logo.png" alt="" />
+            <span>GogoLabs</span>
+          </div>
+          <div class="mock-nav">
+            <span>Studio</span><span>Principles</span><span>Apps</span><span>Team</span><span>Support</span>
+          </div>
+        </div>
+        <div class="mock-hero">
+          <div>
+            <p class="eyebrow">Software studio for post-production</p>
+            <h1>macOS tools for post-production.</h1>
+            <p class="mock-lead">
+              We design software for editors, mixers, and finishing teams where reliability,
+              clarity, and execution speed matter on every delivery.
+            </p>
+            <div class="icon-row">
+              <img src="assets/coupez-icon.png" alt="" />
+              <img src="assets/glass-master-icon.png" alt="" />
+              <img src="assets/odile-icon.png" alt="" />
+              <img src="assets/feedbacks-icon.png" alt="" />
+            </div>
+          </div>
+          <div class="mock-visual">
+            <div class="app-shot main"><img src="assets/glass-master-app.png" alt="" /></div>
+            <div class="app-shot secondary"><img src="assets/feedbacks-app.png" alt="" /></div>
+          </div>
+        </div>
+        <div class="mock-band">
+          <div class="mock-section-head">
+            <p class="eyebrow">Principles</p>
+            <h2>A small studio with a narrow brief and a clear bar.</h2>
+          </div>
+          <div class="principle-grid">
+            <article class="principle-card"><h3>Local-first by default</h3><p>Media stays close to the workstation, processing stays predictable, and exports do not depend on fragile remote loops.</p></article>
+            <article class="principle-card"><h3>Built for operators</h3><p>The software is shaped around concrete decisions in post-production: inspect, compare, validate, export.</p></article>
+            <article class="principle-card"><h3>Less noise, more signal</h3><p>Fewer states, clearer outputs, and interfaces that reduce friction instead of adding more process.</p></article>
+          </div>
+        </div>
+        <div class="mock-band">
+          <div class="mock-section-head"><p class="eyebrow">Apps</p><h2>Our apps.</h2></div>
+          <div class="product-grid">
+            <article class="product-card"><img src="assets/coupez-icon.png" alt="" /><h3>Coupez !</h3><p>Shot analysis to conform-ready output. Fast decisions, cleaner handoff.</p></article>
+            <article class="product-card"><img src="assets/glass-master-icon.png" alt="" /><h3>Glass Master</h3><p>Complete loudness and delivery control. Measure, verify, and deliver in one workspace.</p></article>
+            <article class="product-card"><img src="assets/odile-icon.png" alt="" /><h3>Odile !</h3><p>Selected Pro Tools tracks to clean music EDL. No manual cue-sheet rebuild.</p></article>
+            <article class="product-card"><img src="assets/feedbacks-icon.png" alt="" /><h3>FeedBacks !</h3><p>Mix notes to timeline-ready markers. From text or clipboard to session, fast.</p></article>
+          </div>
+        </div>
+        <div class="mock-footer"><p>Focused macOS tools for post-production teams who want cleaner technical workflows.</p><div class="mock-footer-links"><span>Products</span><span>Support</span><span>Contact</span></div></div>
+      </div>
+    </section>
+
+    <section class="proposal style-b" id="mac-native">
+      <div class="proposal-meta">
+        <div>
+          <p class="proposal-label">Style 02</p>
+          <h2 class="proposal-title">Mac native lumineux</h2>
+          <p>
+            Une version claire, très Apple-adjacent, orientée confiance produit: beaucoup d’espace,
+            arrondis propres, visuels d’apps centraux et navigation discrète.
+          </p>
+        </div>
+        <div class="proposal-notes">
+          <span>Ambiance: premium, simple, macOS</span>
+          <span>Typo: Inter</span>
+          <span>Palette: blanc cassé, bleu système, gris doux</span>
+        </div>
+      </div>
+
+      <div class="mock-site">
+        <div class="mock-topbar">
+          <div class="mock-brand"><img src="assets/gogolabs-logo.png" alt="" /><span>GogoLabs</span></div>
+          <div class="mock-nav"><span>Studio</span><span>Principles</span><span>Apps</span><span>Team</span><span>Support</span></div>
+        </div>
+        <div class="mock-hero">
+          <div>
+            <p class="eyebrow">Software studio for post-production</p>
+            <h1>macOS tools for post-production.</h1>
+            <p class="mock-lead">We design software for editors, mixers, and finishing teams where reliability, clarity, and execution speed matter on every delivery.</p>
+            <div class="icon-row"><img src="assets/coupez-icon.png" alt="" /><img src="assets/glass-master-icon.png" alt="" /><img src="assets/odile-icon.png" alt="" /><img src="assets/feedbacks-icon.png" alt="" /></div>
+          </div>
+          <div class="mock-visual">
+            <div class="app-shot main"><img src="assets/coupez-app.png" alt="" /></div>
+            <div class="app-shot secondary"><img src="assets/odile-app.png" alt="" /></div>
+          </div>
+        </div>
+        <div class="mock-band">
+          <div class="mock-section-head"><p class="eyebrow">Principles</p><h2>A small studio with a narrow brief and a clear bar.</h2></div>
+          <div class="principle-grid">
+            <article class="principle-card"><h3>Local-first by default</h3><p>Media stays close to the workstation, processing stays predictable, and exports do not depend on fragile remote loops.</p></article>
+            <article class="principle-card"><h3>Built for operators</h3><p>The software is shaped around concrete decisions in post-production: inspect, compare, validate, export.</p></article>
+            <article class="principle-card"><h3>Less noise, more signal</h3><p>Fewer states, clearer outputs, and interfaces that reduce friction instead of adding more process.</p></article>
+          </div>
+        </div>
+        <div class="mock-band">
+          <div class="mock-section-head"><p class="eyebrow">Apps</p><h2>Our apps.</h2></div>
+          <div class="product-grid">
+            <article class="product-card"><img src="assets/coupez-icon.png" alt="" /><h3>Coupez !</h3><p>Shot analysis to conform-ready output. Fast decisions, cleaner handoff.</p></article>
+            <article class="product-card"><img src="assets/glass-master-icon.png" alt="" /><h3>Glass Master</h3><p>Complete loudness and delivery control. Measure, verify, and deliver in one workspace.</p></article>
+            <article class="product-card"><img src="assets/odile-icon.png" alt="" /><h3>Odile !</h3><p>Selected Pro Tools tracks to clean music EDL. No manual cue-sheet rebuild.</p></article>
+            <article class="product-card"><img src="assets/feedbacks-icon.png" alt="" /><h3>FeedBacks !</h3><p>Mix notes to timeline-ready markers. From text or clipboard to session, fast.</p></article>
+          </div>
+        </div>
+        <div class="mock-band">
+          <div class="team-grid">
+            <article class="team-card"><img src="assets/team-gautier.png" alt="" /><div><h3>Gautier de Faultrier</h3><p>After more than 20 years as a re-recording mixer, Gautier de Faultrier founded Gogo Labs in 2026 to build software shaped by the real demands of post-production.</p></div></article>
+            <article class="team-card"><img src="assets/team-anne-charlotte.png" alt="" /><div><h3>Anne-Charlotte Labbé</h3><p>Shapes direction, messaging, and clarity so each product decision stays grounded in real user needs.</p></div></article>
+          </div>
+        </div>
+        <div class="mock-footer"><p>Focused macOS tools for post-production teams who want cleaner technical workflows.</p><div class="mock-footer-links"><span>Products</span><span>Support</span><span>Contact</span></div></div>
+      </div>
+    </section>
+
+    <section class="proposal style-c" id="editorial">
+      <div class="proposal-meta">
+        <div>
+          <p class="proposal-label">Style 03</p>
+          <h2 class="proposal-title">Editorial print cinéma</h2>
+          <p>
+            Une direction plus distinctive, presque magazine spécialisé: grands titres serif, aplats
+            francs, images fortes, sensation artisanale et studio indépendant.
+          </p>
+        </div>
+        <div class="proposal-notes">
+          <span>Ambiance: revue cinéma, atelier, manifeste</span>
+          <span>Typo: Newsreader + IBM Plex Mono</span>
+          <span>Palette: papier chaud, encre, rouge, jaune projection</span>
+        </div>
+      </div>
+
+      <div class="mock-site">
+        <div class="mock-topbar">
+          <div class="mock-brand"><img src="assets/gogolabs-logo.png" alt="" /><span>GogoLabs</span></div>
+          <div class="mock-nav"><span>Studio</span><span>Principles</span><span>Apps</span><span>Team</span><span>Support</span></div>
+        </div>
+        <div class="mock-hero">
+          <div>
+            <p class="eyebrow">Software studio for post-production</p>
+            <h1>macOS tools for post-production.</h1>
+            <p class="mock-lead">We design software for editors, mixers, and finishing teams where reliability, clarity, and execution speed matter on every delivery.</p>
+            <div class="icon-row"><img src="assets/coupez-icon.png" alt="" /><img src="assets/glass-master-icon.png" alt="" /><img src="assets/odile-icon.png" alt="" /><img src="assets/feedbacks-icon.png" alt="" /></div>
+          </div>
+          <div class="mock-visual">
+            <div class="app-shot main"><img src="assets/feedbacks-app.png" alt="" /></div>
+            <div class="app-shot secondary"><img src="assets/coupez-app.png" alt="" /></div>
+          </div>
+        </div>
+        <div class="mock-band">
+          <div class="mock-section-head"><p class="eyebrow">Principles</p><h2>A small studio with a narrow brief and a clear bar.</h2></div>
+          <div class="principle-grid">
+            <article class="principle-card"><h3>Local-first by default</h3><p>Media stays close to the workstation, processing stays predictable, and exports do not depend on fragile remote loops.</p></article>
+            <article class="principle-card"><h3>Built for operators</h3><p>The software is shaped around concrete decisions in post-production: inspect, compare, validate, export.</p></article>
+            <article class="principle-card"><h3>Less noise, more signal</h3><p>Fewer states, clearer outputs, and interfaces that reduce friction instead of adding more process.</p></article>
+          </div>
+        </div>
+        <div class="mock-band">
+          <div class="mock-section-head"><p class="eyebrow">Apps</p><h2>Our apps.</h2></div>
+          <div class="product-grid">
+            <article class="product-card"><img src="assets/coupez-icon.png" alt="" /><h3>Coupez !</h3><p>Shot analysis to conform-ready output. Fast decisions, cleaner handoff.</p></article>
+            <article class="product-card"><img src="assets/glass-master-icon.png" alt="" /><h3>Glass Master</h3><p>Complete loudness and delivery control. Measure, verify, and deliver in one workspace.</p></article>
+            <article class="product-card"><img src="assets/odile-icon.png" alt="" /><h3>Odile !</h3><p>Selected Pro Tools tracks to clean music EDL. No manual cue-sheet rebuild.</p></article>
+            <article class="product-card"><img src="assets/feedbacks-icon.png" alt="" /><h3>FeedBacks !</h3><p>Mix notes to timeline-ready markers. From text or clipboard to session, fast.</p></article>
+          </div>
+        </div>
+        <div class="mock-band">
+          <div class="team-grid">
+            <article class="team-card"><img src="assets/team-gautier.png" alt="" /><div><h3>Gautier de Faultrier</h3><p>After more than 20 years as a re-recording mixer, Gautier de Faultrier founded Gogo Labs in 2026 to build software shaped by the real demands of post-production.</p></div></article>
+            <article class="team-card"><img src="assets/team-anne-charlotte.png" alt="" /><div><h3>Anne-Charlotte Labbé</h3><p>Shapes direction, messaging, and clarity so each product decision stays grounded in real user needs.</p></div></article>
+          </div>
+        </div>
+        <div class="mock-footer"><p>Focused macOS tools for post-production teams who want cleaner technical workflows.</p><div class="mock-footer-links"><span>Products</span><span>Support</span><span>Contact</span></div></div>
+      </div>
+    </section>
+
+    <section class="proposal style-d" id="ops-console">
+      <div class="proposal-meta">
+        <div>
+          <p class="proposal-label">Style 04</p>
+          <h2 class="proposal-title">Console workflow dense</h2>
+          <p>
+            Une direction plus SaaS métier: compacte, scannable, orientée processus, validation et
+            outils de production quotidiens.
+          </p>
+        </div>
+        <div class="proposal-notes">
+          <span>Ambiance: dashboard opérateur, robuste, rapide</span>
+          <span>Typo: IBM Plex Mono + Inter</span>
+          <span>Palette: blanc froid, vert état, orange action</span>
+        </div>
+      </div>
+
+      <div class="mock-site">
+        <div class="mock-topbar">
+          <div class="mock-brand"><img src="assets/gogolabs-logo.png" alt="" /><span>GogoLabs</span></div>
+          <div class="mock-nav"><span>Studio</span><span>Principles</span><span>Apps</span><span>Team</span><span>Support</span></div>
+        </div>
+        <div class="mock-hero">
+          <div>
+            <p class="eyebrow">Software studio for post-production</p>
+            <h1>macOS tools for post-production.</h1>
+            <p class="mock-lead">We design software for editors, mixers, and finishing teams where reliability, clarity, and execution speed matter on every delivery.</p>
+            <div class="icon-row"><img src="assets/coupez-icon.png" alt="" /><img src="assets/glass-master-icon.png" alt="" /><img src="assets/odile-icon.png" alt="" /><img src="assets/feedbacks-icon.png" alt="" /></div>
+          </div>
+          <div class="mock-visual">
+            <div class="app-shot main"><img src="assets/odile-app.png" alt="" /></div>
+            <div class="app-shot secondary"><img src="assets/glass-master-app.png" alt="" /></div>
+          </div>
+        </div>
+        <div class="mock-band">
+          <div class="mock-section-head"><p class="eyebrow">Principles</p><h2>A small studio with a narrow brief and a clear bar.</h2></div>
+          <div class="principle-grid">
+            <article class="principle-card" data-index="01"><div><h3>Local-first by default</h3><p>Media stays close to the workstation, processing stays predictable, and exports do not depend on fragile remote loops.</p></div></article>
+            <article class="principle-card" data-index="02"><div><h3>Built for operators</h3><p>The software is shaped around concrete decisions in post-production: inspect, compare, validate, export.</p></div></article>
+            <article class="principle-card" data-index="03"><div><h3>Less noise, more signal</h3><p>Fewer states, clearer outputs, and interfaces that reduce friction instead of adding more process.</p></div></article>
+          </div>
+        </div>
+        <div class="mock-band">
+          <div class="mock-section-head"><p class="eyebrow">Apps</p><h2>Our apps.</h2></div>
+          <div class="product-grid">
+            <article class="product-card"><img src="assets/coupez-icon.png" alt="" /><h3>Coupez !</h3><p>Shot analysis to conform-ready output. Fast decisions, cleaner handoff.</p></article>
+            <article class="product-card"><img src="assets/glass-master-icon.png" alt="" /><h3>Glass Master</h3><p>Complete loudness and delivery control. Measure, verify, and deliver in one workspace.</p></article>
+            <article class="product-card"><img src="assets/odile-icon.png" alt="" /><h3>Odile !</h3><p>Selected Pro Tools tracks to clean music EDL. No manual cue-sheet rebuild.</p></article>
+            <article class="product-card"><img src="assets/feedbacks-icon.png" alt="" /><h3>FeedBacks !</h3><p>Mix notes to timeline-ready markers. From text or clipboard to session, fast.</p></article>
+          </div>
+        </div>
+        <div class="mock-band">
+          <div class="team-grid">
+            <article class="team-card"><img src="assets/team-gautier.png" alt="" /><div><h3>Gautier de Faultrier</h3><p>After more than 20 years as a re-recording mixer, Gautier de Faultrier founded Gogo Labs in 2026 to build software shaped by the real demands of post-production.</p></div></article>
+            <article class="team-card"><img src="assets/team-anne-charlotte.png" alt="" /><div><h3>Anne-Charlotte Labbé</h3><p>Shapes direction, messaging, and clarity so each product decision stays grounded in real user needs.</p></div></article>
+          </div>
+        </div>
+        <div class="mock-footer"><p>Focused macOS tools for post-production teams who want cleaner technical workflows.</p><div class="mock-footer-links"><span>Products</span><span>Support</span><span>Contact</span></div></div>
+      </div>
+    </section>
+  </body>
+</html>
