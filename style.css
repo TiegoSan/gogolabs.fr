@@ -703,6 +703,11 @@ li {
   height: 50px;
 }
 
+.footer-logo-link {
+  display: inline-flex;
+  width: max-content;
+}
+
 .footer-column h3 {
   font-size: 0.86rem;
   font-weight: 800;
