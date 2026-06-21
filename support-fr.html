@@ -14,7 +14,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <script defer src="https://stats.gogolabs.fr/script.js" data-website-id="120e76d3-42e2-4463-8098-781e5417f478"></script>
+    <script defer src="/analytics.js"></script>
   </head>
   <body>
     <main class="page">
@@ -47,7 +47,7 @@
           <h1>Obtenez une réponse utile plus vite en envoyant les bons détails.</h1>
           <p class="support-lead">
             Choisissez votre app ci-dessous et incluez le bon contexte dans votre email. Contact
-            général : <a href="mailto:contact@gogolabs.fr">contact@gogolabs.fr</a>.
+            général : <a href="mailto:contact@gogolabs.fr" data-umami-event="contact_click" data-umami-event-method="email" data-umami-event-location="support-fr">contact@gogolabs.fr</a>.
           </p>
           <p class="support-lang-switch">
             Version anglaise :
@@ -74,6 +74,9 @@
                 href="https://hallowed-rondeletia-8b1.notion.site/Coupez-Support-33279ab45e36807e9d20d01fc654c5c9?source=copy_link"
                 target="_blank"
                 rel="noopener noreferrer"
+                data-umami-event="support_resource_click"
+                data-umami-event-app="coupez"
+                data-umami-event-resource="notion"
               >
                 Coupez Support (Notion)
               </a>
@@ -137,7 +140,7 @@
         <div class="support-meta">
           <h2>Délai de réponse</h2>
           <p>Nous répondons en général sous 2 jours ouvrés.</p>
-          <a class="support-back-link" href="/index.html">Retour à l'accueil</a>
+          <a class="support-back-link" href="/index.html" data-umami-event="home_back_click" data-umami-event-location="support-fr">Retour à l'accueil</a>
         </div>
       </section>
     </main>
