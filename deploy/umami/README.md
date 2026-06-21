@@ -11,11 +11,16 @@ HTTPS/custom-domain routing for `stats.gogolabs.fr`.
 - Tracked website: `gogolabs.fr`
 - Website ID: `120e76d3-42e2-4463-8098-781e5417f478`
 
-The site pages load Umami with:
+The site pages load the local analytics guard with:
 
 ```html
-<script defer src="https://stats.gogolabs.fr/script.js" data-website-id="120e76d3-42e2-4463-8098-781e5417f478"></script>
+<script defer src="/analytics.js"></script>
 ```
+
+`analytics.js` only injects the Umami script on `gogolabs.fr` and
+`www.gogolabs.fr`. Preview hosts such as `gogolabs-fr.pages.dev` and local
+development hosts are intentionally ignored so they do not pollute public
+analytics.
 
 If the Railway-generated domain is still present in Public Networking, it can
 be removed after confirming this command returns HTTP 200:
@@ -91,14 +96,11 @@ GogoLabs website.
 
 13. Add `gogolabs.fr` as a website in Umami, then copy the tracking code.
 
-14. Add the tracking script to the `<head>` of every HTML page in this repo.
+14. Add the local analytics guard to the `<head>` of every HTML page in this
+    repo.
 
-The tracking code will look like this:
+The tracking code should look like this:
 
 ```html
-<script
-  defer
-  src="https://stats.gogolabs.fr/script.js"
-  data-website-id="120e76d3-42e2-4463-8098-781e5417f478"
-></script>
+<script defer src="/analytics.js"></script>
 ```
