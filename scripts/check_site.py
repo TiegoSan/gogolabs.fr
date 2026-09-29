@@ -37,6 +37,15 @@ PUBLIC_APPS = {
     "6780059863": ("DoReQuiz", "1.3"),
 }
 
+MATERIAL_VERSIONS = {
+    "6761286310": "2.0",
+    "6761866606": "1.5",
+    "6769386761": "1.0",
+    "6764426243": "1.2",
+    "6766993396": "1.2",
+    "6780059863": "1.3",
+}
+
 
 class PageParser(HTMLParser):
     def __init__(self) -> None:
@@ -140,8 +149,6 @@ def check_local(root: Path) -> list[str]:
     for app_id, (name, version) in PUBLIC_APPS.items():
         if app_id not in index_text or f'"softwareVersion": "{version}"' not in index_text:
             failures.append(f"index metadata missing {name} {version} ({app_id})")
-    if "Glass Master 1.5" in index_text or "FeedBacks 1.2" in index_text:
-        failures.append("index advertises an unpublished app version")
     manifest_path = root / "assets/app-store-assets.json"
     try:
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -153,8 +160,12 @@ def check_local(root: Path) -> list[str]:
             failures.append("App Store asset manifest ids differ from the public app set")
         for app_id, (name, version) in PUBLIC_APPS.items():
             item = manifest_apps.get(app_id, {})
-            if item.get("name") != name or item.get("version") != version:
+            if item.get("name") != name or item.get("publicVersion") != version:
                 failures.append(f"asset manifest metadata differs for {name}")
+            if item.get("materialVersion") != MATERIAL_VERSIONS[app_id]:
+                failures.append(f"asset manifest material version differs for {name}")
+            if not item.get("descriptionLocalization"):
+                failures.append(f"asset manifest provenance missing for {name}")
             for field in ("icon", "screenshot"):
                 relative = item.get(field)
                 if not relative or not (root / relative).is_file():
