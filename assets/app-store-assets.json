@@ -1,6 +1,6 @@
 {
   "verifiedAt": "2026-09-29",
-  "source": "Current project icon catalogs plus latest App Store Connect version material",
+  "source": "Current project icon catalogs, installed macOS app captures, and latest App Store Connect material for apps not installed locally",
   "apps": [
     {
       "id": "6761286310",
@@ -9,6 +9,7 @@
       "materialVersion": "2.0",
       "icon": "assets/coupez-icon-current.png",
       "screenshot": "assets/products/coupez-current.jpg",
+      "screenshotSource": "Installed Coupez! 2.1 (92) captured on this Mac",
       "descriptionLocalization": "333e4604-aaab-4ed8-9372-b054c8bcf88a"
     },
     {
@@ -18,6 +19,7 @@
       "materialVersion": "1.5",
       "icon": "assets/glass-master-icon-current.png",
       "screenshot": "assets/products/glass-master-current.jpg",
+      "screenshotSource": "Installed Glass Master 1.5 (126) captured on this Mac",
       "descriptionLocalization": "cbc14651-e46b-4a20-90bc-a965e4da7bd0"
     },
     {
@@ -36,6 +38,7 @@
       "materialVersion": "1.2",
       "icon": "assets/feedbacks-icon-current.png",
       "screenshot": "assets/products/feedbacks-current.jpg",
+      "screenshotSource": "Installed FeedBacks! 1.1 (17) captured on this Mac",
       "descriptionLocalization": "56ea718d-23aa-42af-8610-dab2bb6dc14c"
     },
     {
