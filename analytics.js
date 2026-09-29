@@ -9,5 +9,8 @@
   script.defer = true;
   script.src = "https://stats.gogolabs.fr/script.js";
   script.dataset.websiteId = "120e76d3-42e2-4463-8098-781e5417f478";
+  script.dataset.domains = "gogolabs.fr,www.gogolabs.fr";
+  script.dataset.doNotTrack = "true";
+  script.dataset.excludeSearch = "true";
   document.head.appendChild(script);
 })();

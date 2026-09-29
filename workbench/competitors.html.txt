@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- Internal workbench document. The underscore directory is excluded from the published Jekyll site. -->
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />

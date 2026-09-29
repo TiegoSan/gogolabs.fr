@@ -815,6 +815,116 @@ li {
   margin-top: 10px;
 }
 
+.legal-card-open {
+  border-color: rgba(180, 83, 9, 0.28);
+  background: #fffaf0;
+}
+
+.legal-card code {
+  overflow-wrap: anywhere;
+  font-size: 0.92em;
+}
+
+.product-page {
+  display: grid;
+  gap: 30px;
+  padding-top: 42px;
+  padding-bottom: 76px;
+}
+
+.product-hero {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.78fr) minmax(520px, 1.22fr);
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+  padding: clamp(24px, 4vw, 48px);
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 85% 12%, rgba(104, 178, 139, 0.18), transparent 34%),
+    radial-gradient(circle at 8% 88%, rgba(170, 112, 176, 0.14), transparent 36%),
+    var(--surface);
+  box-shadow: 0 24px 60px rgba(17, 24, 39, 0.1);
+}
+
+.product-copy {
+  display: grid;
+  gap: 22px;
+}
+
+.product-copy .eyebrow {
+  margin-bottom: -8px;
+}
+
+.product-copy h1 {
+  max-width: 9ch;
+}
+
+.product-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.product-primary-link,
+.product-secondary-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 12px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.product-primary-link {
+  color: #ffffff;
+  background: #111827;
+}
+
+.product-secondary-link {
+  color: #1f2937;
+  border: 1px solid var(--line-strong);
+  background: rgba(255, 255, 255, 0.76);
+}
+
+.product-primary-link:hover,
+.product-secondary-link:hover {
+  transform: translateY(-1px);
+}
+
+.product-compatibility,
+.product-shot figcaption {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.product-shot {
+  min-width: 0;
+  margin: 0;
+}
+
+.product-shot img {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 22px 48px rgba(17, 24, 39, 0.2);
+}
+
+.product-shot figcaption {
+  margin-top: 10px;
+}
+
+.product-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.product-feature-grid .principle h2 {
+  font-size: clamp(1.4rem, 2vw, 1.9rem);
+}
+
 .panel {
   width: min(900px, calc(100% - 48px));
   margin: 56px auto;
@@ -1364,6 +1474,11 @@ body.is-lightbox-open {
   .support-grid,
   .legal-grid,
   .footer-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .product-hero,
+  .product-feature-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 

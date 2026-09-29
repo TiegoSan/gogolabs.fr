@@ -7,8 +7,17 @@
     <title>GogoLabs</title>
     <meta
       name="description"
-      content="GogoLabs builds focused macOS tools for post-production: Coupez ! for cut detection and AAF workflows, Odile ! for music EDLs, FeedBacks ! for mix feedback markers, Glass Master for loudness compliance and video finishing."
+      content="GogoLabs builds focused tools for post-production and musical practice, including Coupez, Perroquet Piano, and DoReQuiz."
     />
+    <link rel="canonical" href="https://gogolabs.fr/" />
+    <link rel="alternate" hreflang="en" href="https://gogolabs.fr/" />
+    <link rel="alternate" hreflang="x-default" href="https://gogolabs.fr/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="GogoLabs" />
+    <meta property="og:title" content="GogoLabs — focused software for creative work" />
+    <meta property="og:description" content="Independent software studio building focused tools for post-production and musical practice." />
+    <meta property="og:url" content="https://gogolabs.fr/" />
+    <meta property="og:image" content="https://gogolabs.fr/assets/gogolabs-logo.png" />
     <link rel="icon" type="image/png" href="/assets/favicon.png" />
     <link rel="apple-touch-icon" href="/assets/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,6 +28,80 @@
     />
     <link rel="stylesheet" href="style.css?v=20260601-mac-native" />
     <script defer src="/analytics.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://gogolabs.fr/#organization",
+            "name": "GogoLabs",
+            "url": "https://gogolabs.fr/",
+            "logo": "https://gogolabs.fr/assets/gogolabs-logo.png",
+            "email": "contact@gogolabs.fr",
+            "sameAs": [
+              "https://github.com/TiegoSan",
+              "https://apps.apple.com/fr/developer/gautier-de-faultrier/id1887696838"
+            ]
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "Coupez!",
+            "applicationCategory": "MultimediaApplication",
+            "operatingSystem": "macOS",
+            "softwareVersion": "2.0",
+            "downloadUrl": "https://apps.apple.com/fr/app/coupez/id6761286310?mt=12",
+            "author": { "@id": "https://gogolabs.fr/#organization" }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "Glass Master",
+            "applicationCategory": "MultimediaApplication",
+            "operatingSystem": "macOS",
+            "softwareVersion": "1.3",
+            "downloadUrl": "https://apps.apple.com/fr/app/glass-master/id6761866606?mt=12",
+            "author": { "@id": "https://gogolabs.fr/#organization" }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "Odile!",
+            "applicationCategory": "MultimediaApplication",
+            "operatingSystem": "macOS",
+            "softwareVersion": "1.0",
+            "downloadUrl": "https://apps.apple.com/fr/app/odile/id6769386761?mt=12",
+            "author": { "@id": "https://gogolabs.fr/#organization" }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "FeedBacks!",
+            "applicationCategory": "MultimediaApplication",
+            "operatingSystem": "macOS",
+            "softwareVersion": "1.0",
+            "downloadUrl": "https://apps.apple.com/fr/app/feedbacks/id6764426243?mt=12",
+            "author": { "@id": "https://gogolabs.fr/#organization" }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "Perroquet Piano",
+            "applicationCategory": "MusicApplication",
+            "operatingSystem": "iOS, iPadOS",
+            "softwareVersion": "1.2",
+            "url": "https://gogolabs.fr/perroquet/",
+            "downloadUrl": "https://apps.apple.com/fr/app/perroquet-piano/id6766993396",
+            "author": { "@id": "https://gogolabs.fr/#organization" }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "DoReQuiz",
+            "applicationCategory": "MusicApplication",
+            "operatingSystem": "iOS, iPadOS",
+            "softwareVersion": "1.3",
+            "downloadUrl": "https://apps.apple.com/fr/app/dorequiz/id6780059863",
+            "author": { "@id": "https://gogolabs.fr/#organization" }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <main class="page">
@@ -40,17 +123,17 @@
             <a href="#principles">Principles</a>
             <a href="#apps">Apps</a>
             <a href="#team">Team</a>
-            <a href="/support.html">Support</a>
+            <a href="/support/">Support</a>
           </nav>
         </div>
 
         <section class="intro" id="studio">
           <div class="intro-copy">
-            <p class="eyebrow">Software studio for post-production</p>
-            <h1>macOS tools for post-production.</h1>
+            <p class="eyebrow">Independent software studio</p>
+            <h1>Focused tools for creative work.</h1>
             <p class="intro-lead">
-              We design software for editors, mixers, and finishing teams where reliability,
-              clarity, and execution speed matter on every delivery.
+              We design reliable software for post-production teams and direct, tactile apps for
+              learning music by ear.
             </p>
 
           </div>
@@ -131,6 +214,8 @@
           <span class="apps-anchor" id="apps-odile"></span>
           <span class="apps-anchor" id="apps-feedbacks"></span>
           <span class="apps-anchor" id="apps-glass-master"></span>
+          <span class="apps-anchor" id="apps-perroquet"></span>
+          <span class="apps-anchor" id="apps-dorequiz"></span>
         </div>
         <div class="apps-dock-shell">
           <article class="app-spotlight" id="appSpotlight" aria-live="polite">
@@ -146,10 +231,10 @@
               <button class="app-preview-button" id="spotlightPreviewButton" type="button">
                 <img
                   id="spotlightImage"
-                  src="assets/coupez-app.png"
-                  alt="Coupez ! app preview"
-                  width="976"
-                  height="1706"
+                  src="assets/products/coupez-2.0.jpg"
+                  alt="Coupez 2.0 App Store screenshot"
+                  width="1600"
+                  height="1000"
                 />
               </button>
             </div>
@@ -199,7 +284,7 @@
                 data-title="Coupez !"
                 data-summary-strong="Shot analysis to conform-ready output."
                 data-summary-em="Fast decisions, cleaner handoff."
-                data-extra-prefix="Built for real turnovers:"
+                data-extra-prefix="Public version 2.0 on the Mac App Store:"
                 data-extra-strong="track every cut decision with precision,"
                 data-extra-em="then export material that downstream teams trust."
                 data-li-1-strong="Shot detection:"
@@ -209,13 +294,13 @@
                 data-li-3-strong="AAF + conform plans:"
                 data-li-3-text="export-ready material for downstream audio workflows"
                 data-link="https://apps.apple.com/fr/app/coupez/id6761286310?mt=12"
-                data-image="assets/coupez-app.png"
-                data-alt="Coupez ! app preview"
-                data-preview="tall"
+                data-image="assets/products/coupez-2.0.jpg"
+                data-alt="Coupez 2.0 App Store screenshot"
+                data-preview="wide"
                 data-accent="126, 87, 255"
                 data-accent-2="255, 83, 190"
               >
-                <img src="assets/coupez-icon.png" alt="" />
+                <img src="assets/coupez-icon-public.png" alt="" width="256" height="256" />
                 <span>Coupez !</span>
               </button>
 
@@ -226,7 +311,7 @@
                 data-title="Glass Master"
                 data-summary-strong="Complete loudness and delivery control."
                 data-summary-em="Measure, verify, and deliver in one workspace."
-                data-extra-prefix="Built to reduce context switching:"
+                data-extra-prefix="Public version 1.3 on the Mac App Store:"
                 data-extra-strong="validate targets, inspect sections, and export reports,"
                 data-extra-em="without rebuilding the workflow before delivery."
                 data-li-1-strong="Single-pass metering:"
@@ -236,13 +321,13 @@
                 data-li-3-strong="Finishing outputs:"
                 data-li-3-text="reports and exports without jumping across multiple tools"
                 data-link="https://apps.apple.com/fr/app/glass-master/id6761866606?mt=12"
-                data-image="assets/glass-master-app.png"
-                data-alt="Glass Master app preview"
-                data-preview="tall"
+                data-image="assets/products/glass-master-1.3.jpg"
+                data-alt="Glass Master 1.3 App Store screenshot"
+                data-preview="wide"
                 data-accent="73, 213, 255"
                 data-accent-2="255, 176, 73"
               >
-                <img src="assets/glass-master-icon.png" alt="" />
+                <img src="assets/glass-master-icon-public.png" alt="" width="256" height="256" />
                 <span>Glass Master</span>
               </button>
 
@@ -253,7 +338,7 @@
                 data-title="Odile !"
                 data-summary-strong="Selected Pro Tools tracks to clean music EDL."
                 data-summary-em="No manual cue-sheet rebuild."
-                data-extra-prefix="Built around the live session:"
+                data-extra-prefix="Public version 1.0 on the Mac App Store:"
                 data-extra-strong="read tracks, clean rows, apply offsets,"
                 data-extra-em="then export XLSX or send markers back to Pro Tools."
                 data-li-1-strong="PTSL reading:"
@@ -263,13 +348,13 @@
                 data-li-3-strong="Markers + XLSX:"
                 data-li-3-text="create Pro Tools markers and export formatted spreadsheets"
                 data-link="https://apps.apple.com/fr/app/odile/id6769386761?mt=12"
-                data-image="assets/odile-app.png"
-                data-alt="Odile ! app preview"
+                data-image="assets/products/odile-1.0.jpg"
+                data-alt="Odile 1.0 App Store screenshot"
                 data-preview="wide"
                 data-accent="202, 91, 255"
                 data-accent-2="91, 129, 255"
               >
-                <img src="assets/odile-icon.png" alt="" />
+                <img src="assets/odile-icon-public.png" alt="" width="256" height="256" />
                 <span>Odile !</span>
               </button>
 
@@ -280,7 +365,7 @@
                 data-title="FeedBacks !"
                 data-summary-strong="Mix notes to timeline-ready markers."
                 data-summary-em="From text or clipboard to session, fast."
-                data-extra-prefix="Built for review cleanup:"
+                data-extra-prefix="Public version 1.0 on the Mac App Store:"
                 data-extra-strong="parse rows, preview marker settings,"
                 data-extra-em="then import to Pro Tools or export AAF."
                 data-li-1-strong="Text import:"
@@ -290,15 +375,69 @@
                 data-li-3-strong="Pro Tools + AAF:"
                 data-li-3-text="import markers into Pro Tools or export an AAF marker file"
                 data-link="https://apps.apple.com/fr/app/feedbacks/id6764426243?mt=12"
-                data-image="assets/feedbacks-app.png"
-                data-alt="FeedBacks ! app preview"
+                data-image="assets/products/feedbacks-1.0.jpg"
+                data-alt="FeedBacks 1.0 App Store screenshot"
                 data-preview="wide"
                 data-trim="sides"
                 data-accent="73, 213, 255"
                 data-accent-2="255, 88, 147"
               >
-                <img src="assets/feedbacks-icon.png" alt="" />
+                <img src="assets/feedbacks-icon-public.png" alt="" width="256" height="256" />
                 <span>FeedBacks !</span>
+              </button>
+
+              <button
+                class="dock-item"
+                data-app="perroquet"
+                data-kicker="For learning melodies by ear"
+                data-title="Perroquet Piano"
+                data-summary-strong="Record a melody, see its notes, and replay it."
+                data-summary-em="A direct path from sound to the keyboard."
+                data-extra-prefix="Public version 1.2 on iPhone and iPad:"
+                data-extra-strong="analyze short recordings and isolate a playable melodic line,"
+                data-extra-em="then practise it note by note at your own pace."
+                data-li-1-strong="Audio analysis:"
+                data-li-1-text="record a voice, instrument, or song excerpt"
+                data-li-2-strong="Practice controls:"
+                data-li-2-text="slow playback and simplify dense melodies"
+                data-li-3-strong="Playable keyboard:"
+                data-li-3-text="see the detected notes and replay the phrase"
+                data-link="https://apps.apple.com/fr/app/perroquet-piano/id6766993396"
+                data-image="assets/products/perroquet-1.2-public.jpg"
+                data-alt="Perroquet Piano 1.2 running on iPhone"
+                data-preview="wide"
+                data-accent="104, 178, 139"
+                data-accent-2="170, 112, 176"
+              >
+                <img src="assets/perroquet-icon-public.jpg" alt="" width="256" height="256" />
+                <span>Perroquet</span>
+              </button>
+
+              <button
+                class="dock-item"
+                data-app="dorequiz"
+                data-kicker="For playful ear training"
+                data-title="DoReQuiz"
+                data-summary-strong="Listen, find the notes, and progress round after round."
+                data-summary-em="Musical ear training without a theory-heavy interface."
+                data-extra-prefix="Public version 1.3 on iPhone and iPad:"
+                data-extra-strong="six tactile practice modes with immediate feedback,"
+                data-extra-em="plus Game Center leaderboards."
+                data-li-1-strong="Multiple modes:"
+                data-li-1-text="guided, easy, normal, instruments, chords, and freestyle"
+                data-li-2-strong="Immediate feedback:"
+                data-li-2-text="a clear keyboard and short, repeatable challenges"
+                data-li-3-strong="Localized:"
+                data-li-3-text="available in French, English, and Japanese"
+                data-link="https://apps.apple.com/fr/app/dorequiz/id6780059863"
+                data-image="assets/products/dorequiz-1.3-public.jpg"
+                data-alt="DoReQuiz 1.3 running on iPhone"
+                data-preview="wide"
+                data-accent="226, 44, 38"
+                data-accent-2="255, 190, 73"
+              >
+                <img src="assets/dorequiz-icon-public.jpg" alt="" width="256" height="256" />
+                <span>DoReQuiz</span>
               </button>
             </div>
           </div>
@@ -316,10 +455,12 @@
             <div class="team-photo-frame">
               <img
                 class="team-photo"
-                src="assets/team-gautier.png"
+                src="assets/responsive/team-gautier-1200.jpg"
+                srcset="assets/responsive/team-gautier-640.jpg 640w, assets/responsive/team-gautier-1200.jpg 1200w"
+                sizes="(max-width: 760px) 88vw, 44vw"
                 alt="Gautier de Faultrier in the studio"
-                width="1458"
-                height="1442"
+                width="1200"
+                height="1187"
               />
             </div>
             <div class="team-copy">
@@ -338,10 +479,12 @@
             <div class="team-photo-frame">
               <img
                 class="team-photo"
-                src="assets/team-anne-charlotte.png"
+                src="assets/responsive/team-anne-charlotte-1200.jpg"
+                srcset="assets/responsive/team-anne-charlotte-640.jpg 640w, assets/responsive/team-anne-charlotte-1200.jpg 1200w"
+                sizes="(max-width: 760px) 88vw, 44vw"
                 alt="Anne-Charlotte Labbe portrait"
-                width="1487"
-                height="2540"
+                width="703"
+                height="1200"
               />
             </div>
             <div class="team-copy">
@@ -368,7 +511,7 @@
               />
             </a>
             <p>
-              Focused macOS tools for post-production teams who want cleaner technical workflows.
+              Focused software for post-production teams and musical practice.
             </p>
           </div>
 
@@ -378,8 +521,10 @@
             <a href="#apps-odile">Odile !</a>
             <a href="#apps-feedbacks">FeedBacks !</a>
             <a href="#apps-glass-master">Glass Master</a>
+            <a href="#apps-perroquet">Perroquet Piano</a>
+            <a href="#apps-dorequiz">DoReQuiz</a>
             <a
-              href="https://apps.apple.com/fr/developer/gautier-de-faultrier/id1736156363"
+              href="https://apps.apple.com/fr/developer/gautier-de-faultrier/id1887696838"
               target="_blank"
               rel="noopener noreferrer"
               data-umami-event="appstore_developer_click"
@@ -391,7 +536,7 @@
 
           <div class="footer-column">
             <h3>Support</h3>
-            <a href="/support.html" data-umami-event="support_click" data-umami-event-language="en">Support (EN)</a>
+            <a href="/support/" data-umami-event="support_click" data-umami-event-language="en">Support (EN)</a>
             <a href="/support-fr.html" data-umami-event="support_click" data-umami-event-language="fr">Support (FR)</a>
             <a href="/privacy-policy.html">Privacy Policy (EN)</a>
             <a href="/privacy-policy-fr.html">Politique de confidentialite (FR)</a>
@@ -419,7 +564,7 @@
         <button class="image-lightbox-close" id="imageLightboxClose" type="button" aria-label="Close preview">
           ×
         </button>
-        <img id="imageLightboxImage" src="assets/coupez-app.png" alt="" />
+        <img id="imageLightboxImage" src="assets/products/coupez-2.0.jpg" alt="" />
       </div>
     </div>
 

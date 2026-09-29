@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perroquet Piano Privacy Policy | GogoLabs</title>
+    <meta name="description" content="Privacy policy for Perroquet Piano, including remote audio analysis." />
+    <link rel="canonical" href="https://gogolabs.fr/perroquet/privacy/" />
+    <link rel="alternate" hreflang="en" href="https://gogolabs.fr/perroquet/privacy/" />
+    <link rel="alternate" hreflang="x-default" href="https://gogolabs.fr/perroquet/privacy/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GogoLabs" />
+    <meta property="og:title" content="Perroquet Piano Privacy Policy | GogoLabs" />
+    <meta property="og:description" content="Remote audio analysis, diagnostics, storage, and user choices in Perroquet Piano." />
+    <meta property="og:url" content="https://gogolabs.fr/perroquet/privacy/" />
+    <meta property="og:image" content="https://gogolabs.fr/assets/perroquet-icon-public.jpg" />
+    <link rel="icon" type="image/jpeg" href="/assets/perroquet-icon-public.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />
+    <script defer src="/analytics.js"></script>
+  </head>
+  <body>
+    <main class="page">
+      <header class="site-header"><div class="topbar">
+        <a class="brand-lockup" href="/perroquet/" aria-label="Perroquet Piano home"><img class="brand-mark" src="/assets/perroquet-icon-public.jpg" alt="Perroquet Piano icon" width="256" height="256" /><span class="brand-name">Perroquet Piano</span></a>
+        <nav class="topnav" aria-label="Perroquet"><a href="/perroquet/">Product</a><a href="/perroquet/support/">Support</a><a href="/perroquet/privacy/" aria-current="page">Privacy</a></nav>
+      </div></header>
+      <section class="section legal-page">
+        <div class="section-heading legal-heading"><p class="eyebrow">Privacy</p><h1>Perroquet Piano Privacy Policy</h1><p class="legal-lead">Effective September 29, 2026. This page describes the data flows verified in the current app and analysis-service code.</p></div>
+        <div class="legal-grid">
+          <article class="legal-card"><h2>Audio analysis</h2><p>When you request melody analysis, Perroquet uploads the selected or recorded audio to the GogoLabs analysis service hosted at <code>perroquet-production.up.railway.app</code>. The service processes the audio to return detected notes, timing, and diagnostic values.</p></article>
+          <article class="legal-card"><h2>Connection and diagnostic data</h2><p>The service receives technical request data such as the file name, content type, upload size, timestamps, and network connection metadata. Depending on server configuration, approximate location derived from the connection address may be recorded for analysis diagnostics.</p></article>
+          <article class="legal-card"><h2>Storage and review</h2><p>The service code can retain uploaded audio, analysis results, and diagnostics for quality review and can send analysis notifications through an email provider. The exact production retention period is not yet documented; do not upload confidential audio.</p></article>
+          <article class="legal-card"><h2>On-device access</h2><p>Microphone access is used only after permission is granted. Temporary local recording and upload files are removed by the app after the relevant operation, while exports you explicitly save remain under your control.</p></article>
+          <article class="legal-card"><h2>Purpose and sharing</h2><p>Data is used to perform melody analysis, diagnose failures, improve analysis quality, and answer support requests. Service providers used for hosting and email may process the data solely to provide those functions. GogoLabs does not sell this data.</p></article>
+          <article class="legal-card"><h2>Your choices and requests</h2><p>You can avoid remote processing by not starting an analysis. To request access or deletion, email <a href="mailto:contact@gogolabs.fr?subject=Perroquet%20Privacy%20Request">contact@gogolabs.fr</a> with the approximate analysis date and any non-sensitive details needed to locate it.</p></article>
+        </div>
+        <div class="legal-meta"><h2>Open compliance detail</h2><p>A precise production retention schedule and the complete legal identity of the data controller still require publisher confirmation. This policy does not claim a consent exemption.</p><a class="legal-back-link" href="/perroquet/">Back to Perroquet Piano</a></div>
+      </section>
+    </main>
+  </body>
+</html>
